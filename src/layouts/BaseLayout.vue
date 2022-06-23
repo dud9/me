@@ -1,7 +1,11 @@
+<script setup lang="ts">
+import TheNav from './TheNav.vue'
+</script>
+
 <template>
-  <n-layout>
+  <n-layout :native-scrollbar="false">
     <n-layout-header>
-      <TheNav />
+      <TheNav w-full h-50px border="1 red" />
     </n-layout-header>
     <n-layout-content content-style="padding: 24px;">
       <RouterView />

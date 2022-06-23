@@ -2,10 +2,6 @@
 title: Anthony Fu
 ---
 
-<ClientOnly>
-  <Plum/>
-</ClientOnly>
-
 Hey, I am Anthony Fu, a fanatical open sourceror. Working at [NuxtLabs](https://nuxtlabs.com/).
 
 Creator of [Vitest](https://github.com/vitest-dev/vitest), [Slidev](https://github.com/slidevjs/slidev), [VueUse](https://github.com/vueuse/vueuse), [UnoCSS](https://github.com/antfu/unocss), [Type Challenges](https://github.com/type-challenges/type-challenges) and [others](/projects).<br>

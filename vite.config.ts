@@ -51,6 +51,7 @@ export default defineConfig({
       resolvers: [
         NaiveUiResolver(),
       ],
+      dts: 'components.d.ts',
     }),
 
     // https://github.com/antfu/unocss

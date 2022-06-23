@@ -5,6 +5,9 @@
 }
 
 html {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden !important;
   background-color: var(--c-bg);
 }
 
@@ -12,10 +15,6 @@ html.dark {
   --c-bg: #050505;
   --c-scrollbar: #111;
   --c-scrollbar-hover: #222;
-}
-
-html {
-  overflow: scroll;
 }
 
 #nprogress {
