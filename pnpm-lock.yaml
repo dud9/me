@@ -7,6 +7,7 @@ specifiers:
   '@vitejs/plugin-vue': ^2.3.3
   '@vueuse/core': ^8.7.5
   '@vueuse/head': ^0.7.6
+  dayjs: ^1.11.3
   eslint: ^8.18.0
   markdown-it: ^13.0.1
   markdown-it-link-attributes: ^4.0.0
@@ -25,6 +26,7 @@ specifiers:
 dependencies:
   '@vueuse/core': registry.npmmirror.com/@vueuse/core/8.7.5_vue@3.2.37
   '@vueuse/head': registry.npmmirror.com/@vueuse/head/0.7.6_vue@3.2.37
+  dayjs: registry.npmmirror.com/dayjs/1.11.3
   vue: registry.npmmirror.com/vue/3.2.37
   vue-router: registry.npmmirror.com/vue-router/4.0.16_vue@3.2.37
 
@@ -1388,6 +1390,12 @@ packages:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/csstype/-/csstype-2.6.20.tgz}
     name: csstype
     version: 2.6.20
+    dev: false
+
+  registry.npmmirror.com/dayjs/1.11.3:
+    resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dayjs/-/dayjs-1.11.3.tgz}
+    name: dayjs
+    version: 1.11.3
     dev: false
 
   registry.npmmirror.com/debug/2.6.9:
