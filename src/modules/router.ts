@@ -1,5 +1,5 @@
-import autoRoutes from 'pages-generated'
 import { createRouter, createWebHashHistory } from 'vue-router'
+import autoRoutes from 'pages-generated'
 
 const routes = autoRoutes.map((i) => {
   return {

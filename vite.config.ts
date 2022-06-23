@@ -1,21 +1,27 @@
-import path from 'path'
+import { resolve } from 'path'
+import fs from 'fs-extra'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-md'
 import Unocss from 'unocss/vite'
+import matter from 'gray-matter'
 import { presetAttributify, presetIcons, presetUno, presetWind } from 'unocss'
+import Anchor from 'markdown-it-anchor'
 import Prism from 'markdown-it-prism'
+// @ts-expect-error missing types
+import TOC from 'markdown-it-table-of-contents'
 import LinkAttributes from 'markdown-it-link-attributes'
-
-const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
+import { slugify } from './scripts/slugify'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '~/': `${resolve(__dirname, 'src')}/`,
     },
   },
 
@@ -43,7 +49,7 @@ export default defineConfig({
     // your plugin installation
     Components({
       resolvers: [
-
+        NaiveUiResolver(),
       ],
     }),
 
@@ -63,19 +69,50 @@ export default defineConfig({
       ],
     }),
 
-    // https://github.com/antfu/vite-plugin-md
+    Pages({
+      extensions: ['vue', 'md'],
+      pagesDir: 'pages',
+      extendRoute(route) {
+        const path = resolve(__dirname, route.component.slice(1))
+
+        if (!path.includes('projects.md')) {
+          const md = fs.readFileSync(path, 'utf-8')
+          const { data } = matter(md)
+          route.meta = Object.assign(route.meta || {}, { frontmatter: data })
+        }
+
+        return route
+      },
+    }),
+
     Markdown({
-      wrapperClasses: markdownWrapperClasses,
+      wrapperComponent: 'post',
+      wrapperClasses: 'prose m-auto',
       headEnabled: true,
+      markdownItOptions: {
+        quotes: '""\'\'',
+      },
       markdownItSetup(md) {
-        // https://prismjs.com/
         md.use(Prism)
+        md.use(Anchor, {
+          slugify,
+          permalink: Anchor.permalink.linkInsideHeader({
+            symbol: '#',
+            renderAttrs: () => ({ 'aria-hidden': 'true' }),
+          }),
+        })
+
         md.use(LinkAttributes, {
           matcher: (link: string) => /^https?:\/\//.test(link),
           attrs: {
             target: '_blank',
             rel: 'noopener',
           },
+        })
+
+        md.use(TOC, {
+          includeLevel: [1, 2, 3],
+          slugify,
         })
       },
     }),

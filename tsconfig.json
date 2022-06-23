@@ -16,8 +16,7 @@
     "types": [
       "vite/client",
       "vue/ref-macros",
-      "vite-plugin-pages/client",
-      "vue-router"
+      "vite-plugin-pages/client"
     ],
     "paths": {
       "~/*": ["src/*"]
