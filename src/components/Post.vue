@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<!-- <script setup lang='ts'>
 import { formatDate } from '~/logics'
 
 const { frontmatter } = defineProps({
@@ -89,4 +89,4 @@ onMounted(() => {
       cd ..
     </router-link>
   </div>
-</template>
+</template> -->
