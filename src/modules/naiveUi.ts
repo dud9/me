@@ -1,11 +1,12 @@
 import {
   NAvatar,
   NImage,
+  NResult,
   create,
 } from 'naive-ui'
 
 const naive = create({
-  components: [NAvatar, NImage],
+  components: [NAvatar, NImage, NResult],
 })
 
 export default {
