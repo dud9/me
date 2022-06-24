@@ -1,8 +1,49 @@
 <script setup lang="ts">
+import { NAvatar, NImage } from 'naive-ui'
+const qqScanCodeSrc = '~/assets/qq-scan-code.jpg'
 const navItemStyle = 'text-lg op-50 hover:op-100 focus:op-100'
 const router = useRouter()
 function go2(path: string) {
   router.push(path)
+}
+function showImageNote({
+  title = '',
+  description = '',
+  imageSrc = '',
+  fallbackSrc = '',
+  metaDate = dayJs(new Date()).format('YYYY-MM-DD HH:mm:ss'),
+  avatar = '~/assets/avatar.jpg',
+  leaveMessage = 'Thank U~',
+}) {
+  notification.create({
+    title,
+    description,
+    content: () =>
+      h(NImage, {
+        width: '100%',
+        src: imageSrc,
+        fallbackSrc,
+        lazy: true,
+      }),
+    meta: metaDate,
+    avatar: () =>
+      h(NAvatar, {
+        size: 'small',
+        round: true,
+        src: avatar,
+      }),
+    onAfterLeave: () => {
+      message.success(leaveMessage)
+    },
+  })
+}
+function showImage(type = 'qq') {
+  showImageNote({
+    title: '',
+    description: '',
+    imageSrc: qqScanCodeSrc,
+
+  })
 }
 </script>
 
@@ -75,10 +116,8 @@ function go2(path: string) {
         trigger="hover"
       >
         <template #trigger>
-          <n-button quaternary text :focusable="false" lt-md:hidden :class="navItemStyle">
-            <a href="https://twitter.com/antfu7" target="_blank">
-              <div i-ri-qq-line />
-            </a>
+          <n-button quaternary text :focusable="false" lt-md:hidden :class="navItemStyle" @click="showImage">
+            <div i-ri-qq-line />
           </n-button>
         </template>
         <span> QQ </span>
@@ -88,10 +127,8 @@ function go2(path: string) {
         trigger="hover"
       >
         <template #trigger>
-          <n-button quaternary text :focusable="false" lt-md:hidden :class="navItemStyle">
-            <a href="https://twitter.com/antfu7" target="_blank">
-              <div i-ri-heart-line />
-            </a>
+          <n-button quaternary text :focusable="false" lt-md:hidden :class="navItemStyle" @click="showImage('sponsor')">
+            <div i-ri-heart-line />
           </n-button>
         </template>
         <span> Sponsor Me </span>
