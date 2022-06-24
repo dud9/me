@@ -16,7 +16,6 @@ export function useImageNote({
     description,
     content: () =>
       h(NImage, {
-        // width: '100%',
         src: imageSrc,
         // fallbackSrc,
         // lazy: true,
