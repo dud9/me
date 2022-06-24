@@ -23,8 +23,12 @@ const router = createRouter({
   scrollBehavior,
 })
 
-// router.beforeEach(() => { NProgress.start() })
-// router.afterEach(() => { NProgress.done() })
+// function createRouterGuard() {
+//   const loadingBar = useLoadingBar()
+//   router.beforeEach(() => { loadingBar.start() })
+//   router.afterEach(() => { loadingBar.finish() })
+// }
+// createRouterGuard()
 
 export default {
   install(app: any) {

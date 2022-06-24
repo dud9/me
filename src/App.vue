@@ -13,6 +13,8 @@ const theme = computed<ThemeType>(() => {
 
 <template>
   <n-config-provider :theme="theme">
-    <BaseLayout />
+    <n-loading-bar-provider>
+      <BaseLayout />
+    </n-loading-bar-provider>
   </n-config-provider>
 </template>

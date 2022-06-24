@@ -1,6 +1,16 @@
 <script setup lang="ts">
+import { useLoadingBar } from 'naive-ui'
 import TheNav from './TheNav.vue'
 import TheFoot from './TheFoot.vue'
+
+const route = useRoute()
+const loadingBar = useLoadingBar()
+watch(() => route.path, () => {
+  loadingBar.start()
+  useTimeoutFn(() => {
+    loadingBar.finish()
+  }, 200)
+})
 </script>
 
 <template>
