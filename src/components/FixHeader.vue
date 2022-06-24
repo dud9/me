@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const headerFixed = fixedHeader
-const debounceToggle = useDebounceFn(() => {
+const debouncedToggle = useDebounceFn(() => {
   const { message } = getGlobalNaiveApi()
   toggleFixedHeader()
   message.success(
@@ -18,7 +18,7 @@ const debounceToggle = useDebounceFn(() => {
       trigger="hover"
     >
       <template #trigger>
-        <n-button text :focusable="false" class="text-2xl" @click="debounceToggle">
+        <n-button text :focusable="false" class="text-2xl" @click="debouncedToggle">
           <div
             :class="headerFixed
               ? 'i-ph-push-pin-slash-bold'
