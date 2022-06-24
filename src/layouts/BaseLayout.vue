@@ -25,7 +25,7 @@ const headerFixed = fixedHeader
       </n-layout-footer>
       <n-back-top v-if="headerFixed" :right="50" />
     </n-layout>
-    <n-back-top v-if="!headerFixed" :right="50" />
     <FixHeader />
+    <n-back-top v-if="!headerFixed" :right="50" />
   </n-layout>
 </template>
