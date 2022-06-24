@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const inactiveStyle = 'opacity-20 hover:opacity-50'
-
 const route = useRoute()
 </script>
 
