@@ -23,7 +23,12 @@ const router = createRouter({
   scrollBehavior,
 })
 
-export { router }
+function createRouterGuard() {
+  const { loadingBar } = getGlobalNaiveApi()
+  router.beforeEach(() => { loadingBar.start() })
+  router.afterEach(() => { loadingBar.finish() })
+}
+createRouterGuard()
 
 export default {
   install(app: any) {

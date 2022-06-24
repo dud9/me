@@ -1,42 +1,9 @@
 <script setup lang="ts">
-import { NAvatar, NImage } from 'naive-ui'
 const qqScanCodeSrc = '~/assets/qq-scan-code.jpg'
 const navItemStyle = 'text-lg op-50 hover:op-100 focus:op-100'
 const router = useRouter()
 function go2(path: string) {
   router.push(path)
-}
-function showImageNote({
-  title = '',
-  description = '',
-  imageSrc = '',
-  fallbackSrc = '',
-  metaDate = dayJs(new Date()).format('YYYY-MM-DD HH:mm:ss'),
-  avatar = '~/assets/avatar.jpg',
-  leaveMessage = 'Thank U~',
-}) {
-  const { message, notification } = getGlobalApi()
-  notification.create({
-    title,
-    description,
-    content: () =>
-      h(NImage, {
-        width: '100%',
-        src: imageSrc,
-        fallbackSrc,
-        lazy: true,
-      }),
-    meta: metaDate,
-    avatar: () =>
-      h(NAvatar, {
-        size: 'small',
-        round: true,
-        src: avatar,
-      }),
-    onAfterLeave: () => {
-      message.success(leaveMessage)
-    },
-  })
 }
 function showImage(type = 'qq') {
   showImageNote({
