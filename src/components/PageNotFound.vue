@@ -1,7 +1,9 @@
 <template>
-  <n-result status="404" title="404 资源不存在" description="生活总归带点荒谬">
+  <n-result status="404" title="😅连个毛也没有~" description="😅😅😅😅😅😅">
     <template #footer>
-      <n-button>找点乐子吧</n-button>
+      <n-button text class="text-xl" @click="$router.go(-1)">
+        cd..
+      </n-button>
     </template>
   </n-result>
 </template>
