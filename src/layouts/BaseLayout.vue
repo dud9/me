@@ -15,12 +15,12 @@ const headerFixed = fixedHeader
       :position="headerFixed ? 'absolute' : 'static'"
       :class="headerFixed ? 'mt-[4.5rem]' : ''"
     >
-      <n-layout-content>
+      <n-layout-content bg="[#F5F5F5] dark:[#101014]">
         <div flex justify-center px-7 py-10>
           <RouterView />
         </div>
       </n-layout-content>
-      <n-layout-footer bg="white dark:[#101014]">
+      <n-layout-footer bg="[#F5F5F5] dark:[#101014]">
         <TheFoot w-full h-50px />
       </n-layout-footer>
       <n-back-top v-if="headerFixed" :right="50" />
