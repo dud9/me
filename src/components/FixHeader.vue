@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const headerFixed = fixedHeader
 const debouncedToggle = useDebounceFn(() => {
-  const { message } = getGlobalNaiveApi()
+  const { message } = useGlobalNaiveApi()
   toggleFixedHeader()
   message.success(
     unref(fixedHeader)

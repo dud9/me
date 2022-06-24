@@ -10,7 +10,7 @@ export function showImageNote({
   hasLeaveMessage = false,
   leaveMessage = 'Thank U~',
 }) {
-  const { message, notification } = getGlobalNaiveApi()
+  const { message, notification } = useGlobalNaiveApi()
   notification.create({
     title,
     description,

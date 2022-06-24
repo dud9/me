@@ -11,7 +11,7 @@ const configProviderPropsRef = computed<ConfigProviderProps>(() => ({
     : lightTheme,
 }))
 
-export function getGlobalNaiveApi() {
+export function useGlobalNaiveApi() {
   const { message, notification, dialog, loadingBar } = createDiscreteApi(
     ['message', 'dialog', 'notification', 'loadingBar'],
     {

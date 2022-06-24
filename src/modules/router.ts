@@ -24,7 +24,7 @@ const router = createRouter({
 })
 
 function createRouterGuard() {
-  const { loadingBar } = getGlobalNaiveApi()
+  const { loadingBar } = useGlobalNaiveApi()
   router.beforeEach(() => { loadingBar.start() })
   router.afterEach(() => { loadingBar.finish() })
 }
