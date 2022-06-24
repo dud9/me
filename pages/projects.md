@@ -393,8 +393,5 @@ projects:
       icon: 'i-carbon-time'
 ---
 
-[Sponsors](/sponsors-list)
-
 <ListProjects :projects="frontmatter.projects"/>
 
-<StarsRanking/>

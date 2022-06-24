@@ -7,6 +7,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     DarkToggle: typeof import('./src/components/DarkToggle.vue')['default']
     FixHeader: typeof import('./src/components/FixHeader.vue')['default']
+    ListProjects: typeof import('./src/components/ListProjects.vue')['default']
     NBackTop: typeof import('naive-ui')['NBackTop']
     NButton: typeof import('naive-ui')['NButton']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
