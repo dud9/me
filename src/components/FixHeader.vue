@@ -1,5 +1,14 @@
 <script setup lang="ts">
-const toggle = toggleFixedHeader
+const headerFixed = fixedHeader
+const toggle = () => {
+  const { message } = getGlobalNaiveApi()
+  toggleFixedHeader()
+  message.success(
+    unref(fixedHeader)
+      ? '已固定页头'
+      : '已取消固定',
+  )
+}
 </script>
 
 <template>
@@ -9,8 +18,13 @@ const toggle = toggleFixedHeader
       trigger="hover"
     >
       <template #trigger>
-        <n-button text class="text-2xl" @click="toggle()">
-          <div i-bi-pin-angle op-50 hover:op-100 focus:op-100 />
+        <n-button text :focusable="false" class="text-2xl" @click="toggle()">
+          <div
+            :class="headerFixed
+              ? 'i-ph-push-pin-slash-bold'
+              : 'i-ph-push-pin-bold'"
+            op-50 hover:op-100 focus:op-100
+          />
         </n-button>
       </template>
       <span> 固定页头 </span>
