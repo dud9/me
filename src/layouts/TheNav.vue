@@ -10,10 +10,12 @@ function showImage(type = 'qq') {
   const title = type === 'qq'
     ? '联系我吧'
     : '赞助我吧'
-  const description = 'Just Playing Around!'
-  const imageSrc = type === 'src'
+  const description = type === 'qq'
+    ? 'Just Playing Around!'
+    : '为作者送上一杯咖啡~'
+  const imageSrc = type === 'qq'
     ? EnumAppMeta.qqScanCode
-    : EnumAppMeta.aliPay
+    : EnumAppMeta.wechatPay
   const hasLeaveMessage = type !== 'qq'
   const leaveMessage = type === 'qq'
     ? ''
