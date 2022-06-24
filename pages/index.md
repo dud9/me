@@ -1,5 +1,5 @@
 ---
-title: Anthony Fu
+title: Faitsse
 ---
 
 Hey, I am Anthony Fu, a fanatical open sourceror. Working at [NuxtLabs](https://nuxtlabs.com/).

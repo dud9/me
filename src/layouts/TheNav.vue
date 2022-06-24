@@ -2,9 +2,7 @@
 </script>
 
 <template>
-  <div
-    fixed top-0 inset-x-0 z-50 px-6 flex gap2 justify-end items-center class="h-[4.5rem]" w-full backdrop-blur
-  >
+  <div flex gap4 justify-end items-center px-10 py-8 text-18px>
     <router-link to="/posts" title="博客">
       <span class="lt-md:hidden">Blog</span>
       <div i-ri-article-line md:hidden />
