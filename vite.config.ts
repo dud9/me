@@ -48,6 +48,8 @@ export default defineConfig({
 
     // your plugin installation
     Components({
+      extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [
         NaiveUiResolver(),
       ],
