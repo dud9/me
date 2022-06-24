@@ -3,3 +3,7 @@ export enum EnumAppMeta {
   qqScanCode = 'src/assets/qq-scan-code.jpg',
   aliPay = 'src/assets/qq-scan-code.jpg',
 }
+
+export enum EnumStorageKey {
+  themeMode = 'THEME_MODE',
+}
