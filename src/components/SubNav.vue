@@ -5,7 +5,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <div class="prose m-auto mb-8 select-none">
+  <div prose m-auto mb-8 select-none>
     <div mb-0 flex="~ gap-3" text-3xl>
       <router-link to="/posts" class="!border-none !font-400" :class="route.path === '/posts' ? '' : inactiveStyle">
         前端
