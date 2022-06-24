@@ -1,10 +1,11 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-  <div flex justify-end h-50px w-full>
-    dasdasd
+  <div
+    fixed top-0 inset-x-0 z-50 px-6 flex gap2 justify-end items-center class="h-[4.5rem]" w-full
+    bg="white dark:!black-800 !opacity-80" backdrop-blur
+  >
     <router-link to="/posts" title="博客">
       <span class="lt-md:hidden">Blog</span>
       <div i-ri-article-line md:hidden />
@@ -31,7 +32,7 @@
     <a href="https://github.com/faitsse" target="_blank" title="GitHub" class="lt-md:hidden">
       <div i-uil-github-alt />
     </a>
-    <toggle-theme />
+    <DarkToggle />
   </div>
 </template>
 

@@ -4,10 +4,10 @@ import TheNav from './TheNav.vue'
 
 <template>
   <n-layout :native-scrollbar="false">
-    <n-layout-header>
+    <n-layout-header bg="white dark:black-800">
       <TheNav w-full h-50px border="1 red" />
     </n-layout-header>
-    <n-layout-content content-style="padding: 24px;">
+    <n-layout-content content-style="padding: 24px; background-color: black;">
       <RouterView />
     </n-layout-content>
     <n-layout-footer>
