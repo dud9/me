@@ -14,6 +14,7 @@ import TheFoot from './TheFoot.vue'
     <n-layout-footer bg="white dark:[#101014]">
       <TheFoot w-full h-50px />
     </n-layout-footer>
+    <FixHeader />
     <n-back-top :right="50" />
   </n-layout>
 </template>
