@@ -1,15 +1,30 @@
 <script setup lang="ts">
-const qqScanCodeSrc = '~/assets/qq-scan-code.jpg'
+import { EnumAppMeta } from '~/enum'
+
 const navItemStyle = 'text-lg op-50 hover:op-100 focus:op-100'
 const router = useRouter()
 function go2(path: string) {
   router.push(path)
 }
 function showImage(type = 'qq') {
+  const title = type === 'qq'
+    ? '联系我吧'
+    : '赞助我吧'
+  const description = 'Just Playing Around!'
+  const imageSrc = type === 'src'
+    ? EnumAppMeta.qqScanCode
+    : EnumAppMeta.aliPay
+  const hasLeaveMessage = type !== 'qq'
+  const leaveMessage = type === 'qq'
+    ? ''
+    : '谢谢老板~'
   showImageNote({
-    title: '',
-    description: '',
-    imageSrc: qqScanCodeSrc,
+    title,
+    description,
+    imageSrc,
+    avatar: EnumAppMeta.avatar,
+    hasLeaveMessage,
+    leaveMessage,
   })
 }
 </script>
@@ -83,7 +98,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" lt-md:hidden :class="navItemStyle" @click="showImage">
+          <n-button text :focusable="false" lt-md:hidden :class="navItemStyle" @click="showImage('qq')">
             <div i-ri-qq-line />
           </n-button>
         </template>

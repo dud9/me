@@ -1,25 +1,25 @@
-import { NAvatar, NImage, useMessage, useNotification } from 'naive-ui'
+import { NAvatar, NImage } from 'naive-ui'
 
 export function showImageNote({
   title = '',
   description = '',
-  imageSrc = '',
-  fallbackSrc = '',
+  imageSrc = 'src/assets/avatar.jpg',
+  // fallbackSrc = '',
   metaDate = dayJs(new Date()).format('YYYY-MM-DD HH:mm:ss'),
-  avatar = '~/assets/avatar.jpg',
+  avatar = 'src/assets/avatar.jpg',
+  hasLeaveMessage = false,
   leaveMessage = 'Thank U~',
 }) {
-  const message = useMessage()
-  const notification = useNotification()
+  const { message, notification } = getGlobalNaiveApi()
   notification.create({
     title,
     description,
     content: () =>
       h(NImage, {
-        width: '100%',
+        // width: '100%',
         src: imageSrc,
-        fallbackSrc,
-        lazy: true,
+        // fallbackSrc,
+        // lazy: true,
       }),
     meta: metaDate,
     avatar: () =>
@@ -29,7 +29,8 @@ export function showImageNote({
         src: avatar,
       }),
     onAfterLeave: () => {
-      message.success(leaveMessage)
+      if (hasLeaveMessage)
+        message.success(leaveMessage)
     },
   })
 }
