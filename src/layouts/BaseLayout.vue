@@ -2,15 +2,14 @@
 import { useLoadingBar } from 'naive-ui'
 import TheNav from './TheNav.vue'
 import TheFoot from './TheFoot.vue'
+import { router } from '~/modules/router'
 
-const route = useRoute()
-const loadingBar = useLoadingBar()
-watch(() => route.path, () => {
-  loadingBar.start()
-  useTimeoutFn(() => {
-    loadingBar.finish()
-  }, 200)
-})
+function createRouterGuard() {
+  const loadingBar = useLoadingBar()
+  router.beforeEach(() => { loadingBar.start() })
+  router.afterEach(() => { loadingBar.finish() })
+}
+createRouterGuard()
 </script>
 
 <template>

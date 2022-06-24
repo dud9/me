@@ -23,12 +23,7 @@ const router = createRouter({
   scrollBehavior,
 })
 
-// function createRouterGuard() {
-//   const loadingBar = useLoadingBar()
-//   router.beforeEach(() => { loadingBar.start() })
-//   router.afterEach(() => { loadingBar.finish() })
-// }
-// createRouterGuard()
+export { router }
 
 export default {
   install(app: any) {

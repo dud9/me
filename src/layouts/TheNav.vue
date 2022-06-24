@@ -8,7 +8,7 @@ function go2(path: string) {
 
 <template>
   <div flex justify-between items-center px="10 lt-md:4">
-    <div text="2xl black-800 dark:white">
+    <div text="2xl black-800 dark:white" font-bold>
       Faitsse
     </div>
     <nav flex gap-5 justify-end items-center>
