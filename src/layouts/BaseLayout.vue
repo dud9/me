@@ -8,7 +8,7 @@ import TheFoot from './TheFoot.vue'
     <n-layout-header bordered>
       <TheNav class="h-[4.5rem]" />
     </n-layout-header>
-    <n-layout-content flex justify-center py-10>
+    <n-layout-content flex justify-center px-7 py-10>
       <RouterView />
     </n-layout-content>
     <n-layout-footer bg="white dark:[#101014]">
