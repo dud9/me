@@ -18,7 +18,7 @@ function showImage(type = 'qq') {
   const leaveMessage = type === 'qq'
     ? ''
     : '谢谢老板~'
-  showImageNote({
+  useImageNote({
     title,
     description,
     imageSrc,

@@ -1,6 +1,6 @@
 import { NAvatar, NImage } from 'naive-ui'
 
-export function showImageNote({
+export function useImageNote({
   title = '',
   description = '',
   imageSrc = 'src/assets/avatar.jpg',
