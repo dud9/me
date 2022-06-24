@@ -14,5 +14,6 @@ import TheFoot from './TheFoot.vue'
     <n-layout-footer>
       <TheFoot />
     </n-layout-footer>
+    <n-back-top :right="100" />
   </n-layout>
 </template>
