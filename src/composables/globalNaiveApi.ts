@@ -6,21 +6,22 @@ import {
 } from 'naive-ui'
 
 const configProviderPropsRef = computed<ConfigProviderProps>(() => ({
-  theme: isDark
+  theme: isDark.value
     ? darkTheme
     : lightTheme,
 }))
 
-const { message, notification, dialog, loadingBar } = createDiscreteApi(
-  ['message', 'dialog', 'notification', 'loadingBar'],
-  {
-    configProviderProps: configProviderPropsRef,
-  },
-)
-
-export {
-  message,
-  notification,
-  dialog,
-  loadingBar,
+export function getGlobalNaiveApi() {
+  const { message, notification, dialog, loadingBar } = createDiscreteApi(
+    ['message', 'dialog', 'notification', 'loadingBar'],
+    {
+      configProviderProps: configProviderPropsRef,
+    },
+  )
+  return {
+    message,
+    notification,
+    dialog,
+    loadingBar,
+  }
 }
