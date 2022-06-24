@@ -58,7 +58,7 @@ export default defineConfig({
     // see unocss.config.ts for config
     Unocss({
       shortcuts: {
-        'icon-btn': 'op30 hover:op100]',
+        'nav-item': 'op30 hover:op100]',
       },
       presets: [
         presetAttributify(),
