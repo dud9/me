@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div flex justify-between items-center px="10 lt-md:4" text-18px class="h-[4.5rem]">
+  <div flex justify-between items-center px="10 lt-md:4" text-18px>
     <div text="30px black-800 dark:white" op-80>
       Faitsse
     </div>
