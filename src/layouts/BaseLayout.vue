@@ -7,18 +7,25 @@ const headerFixed = fixedHeader
 
 <template>
   <n-layout :native-scrollbar="false" h-screen w-screen>
-    <n-layout-header bordered :class="headerFixed ? 'fixed top-0 left-0 z-1000' : ''">
+    <n-layout-header bordered :class="headerFixed ? 'fixed top-0 left-0' : ''">
       <TheNav w-full class="h-[4.5rem]" />
     </n-layout-header>
-    <n-layout-content :native-scrollbar="false" :position="headerFixed ? 'absolute' : 'static'" :class="headerFixed ? 'mt-[4.5rem]' : ''" border="2 red">
-      <div flex justify-center px-7 py-10>
-        <RouterView />
-      </div>
-    </n-layout-content>
-    <n-layout-footer bg="white dark:[#101014]">
-      <TheFoot w-full h-50px />
-    </n-layout-footer>
+    <n-layout
+      :native-scrollbar="false"
+      :position="headerFixed ? 'absolute' : 'static'"
+      :class="headerFixed ? 'mt-[4.5rem]' : ''"
+    >
+      <n-layout-content>
+        <div flex justify-center px-7 py-10>
+          <RouterView />
+        </div>
+      </n-layout-content>
+      <n-layout-footer bg="white dark:[#101014]">
+        <TheFoot w-full h-50px />
+      </n-layout-footer>
+      <n-back-top v-if="headerFixed" :right="50" />
+    </n-layout>
+    <n-back-top v-if="!headerFixed" :right="50" />
     <FixHeader />
-    <n-back-top :right="50" />
   </n-layout>
 </template>
