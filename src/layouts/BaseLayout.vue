@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import TheNav from './TheNav.vue'
+import TheFoot from './TheFoot.vue'
 </script>
 
 <template>
   <n-layout :native-scrollbar="false">
-    <n-layout-header bg="white dark:black-800">
-      <TheNav w-full h-50px border="1 red" />
+    <n-layout-header>
+      <TheNav />
     </n-layout-header>
-    <n-layout-content content-style="padding: 24px; background-color: black;">
+    <n-layout-content>
       <RouterView />
     </n-layout-content>
     <n-layout-footer>
