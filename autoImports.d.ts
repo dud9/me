@@ -35,6 +35,7 @@ declare global {
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const fixedHeader: typeof import('./src/composables/fixHeader')['fixedHeader']
+  const formatDate: typeof import('./src/composables/dayJs')['formatDate']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
