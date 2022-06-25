@@ -5,6 +5,7 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BackWidget: typeof import('./src/components/BackWidget.vue')['default']
     DarkToggle: typeof import('./src/components/DarkToggle.vue')['default']
     FixHeader: typeof import('./src/components/FixHeader.vue')['default']
     ListProjects: typeof import('./src/components/ListProjects.vue')['default']
