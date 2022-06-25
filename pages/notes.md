@@ -506,3 +506,5 @@ A solution here is to create a new site with your original name `xxx` and upload
 Note you don't have to link a repo to that, Netlify offers a great feature that [let you drag and drop for static files and serve as a site](https://app.netlify.com/drop). So you can just save `netlify.toml` and upload it, rename the site to your original name. The redirection is done!
 
 </article>
+
+<BackWidget />
