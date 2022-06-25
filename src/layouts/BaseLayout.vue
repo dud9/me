@@ -17,7 +17,11 @@ const headerFixed = fixedHeader
     >
       <n-layout-content>
         <div flex justify-center px-7 py-10>
-          <RouterView />
+          <RouterView v-slot="{ Component, route }">
+            <Transition name="fade-slide" mode="out-in" appear>
+              <Component :is="Component" :key="route.fullPath" />
+            </Transition>
+          </RouterView>
         </div>
       </n-layout-content>
       <n-layout-footer bg="white dark:[#101014]">
