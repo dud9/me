@@ -277,6 +277,7 @@ export interface UserInfo {
   name: string
 }
 
+// eslint-disable-next-line symbol-description
 export const InjectKeyUser: InjectionKey<UserInfo> = Symbol()
 ```
 
