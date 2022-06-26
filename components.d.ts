@@ -5,6 +5,7 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AppLink: typeof import('./src/components/AppLink.vue')['default']
     BackWidget: typeof import('./src/components/BackWidget.vue')['default']
     DarkToggle: typeof import('./src/components/DarkToggle.vue')['default']
     FixHeader: typeof import('./src/components/FixHeader.vue')['default']
@@ -13,6 +14,7 @@ declare module '@vue/runtime-core' {
     NBackTop: typeof import('naive-ui')['NBackTop']
     NButton: typeof import('naive-ui')['NButton']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NEmpty: typeof import('naive-ui')['NEmpty']
     NLayout: typeof import('naive-ui')['NLayout']
     NLayoutContent: typeof import('naive-ui')['NLayoutContent']
     NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
