@@ -33,8 +33,8 @@ defineProps<{ projects: Record<string, any[]> }>()
       </a>
     </div>
   </template>
-  <div class="markdown pb5">
-    <p op75>
+  <div class="markdown">
+    <p op75 pt-4>
       <em>
         Thanks for getting intersted in my works! If like them or find them useful, consider
         &nbsp;<a
