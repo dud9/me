@@ -4,12 +4,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "build": "npm run static && cross-env NODE_ENV=production vite build && esno ./scripts/rss.ts && cp _dist_redirects dist/_redirects",
     "dev": "vite --port 3333 --open",
-    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
+    "static": "rimraf temp && degit antfu/static temp --force && esno scripts/copy-sponsors",
+    "redirects": "esno scripts/redirects.ts",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "typecheck": "vue-tsc --noEmit"
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@vueuse/core": "^8.7.5",
