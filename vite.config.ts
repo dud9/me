@@ -89,7 +89,7 @@ export default defineConfig({
     }),
 
     Markdown({
-      wrapperComponent: 'post',
+      wrapperComponent: 'Post',
       wrapperClasses: 'prose m-auto',
       headEnabled: true,
       markdownItOptions: {
