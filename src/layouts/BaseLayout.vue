@@ -16,7 +16,7 @@ const headerFixed = fixedHeader
       :class="headerFixed ? 'mt-[4.5rem]' : ''"
     >
       <n-layout-content>
-        <div flex justify-center px-7 py-10>
+        <div flex="~ col" justify-center px-7 py-10>
           <RouterView v-slot="{ Component, route }">
             <Transition name="fade-slide" mode="out-in" appear>
               <Component :is="Component" :key="route.fullPath" />
