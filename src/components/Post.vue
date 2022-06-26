@@ -9,6 +9,8 @@ const format = formatDate
 const router = useRouter()
 const route = useRoute()
 const content = ref<HTMLDivElement>()
+// fix: when md title list click,
+// scroll smooth to the target.
 onMounted(() => {
   const navigate = () => {
     if (location.hash) {
@@ -23,6 +25,7 @@ onMounted(() => {
     if (
       !event.defaultPrevented
       && link
+      && link.href
       && event.button === 0
       && link.target !== '_blank'
       && link.rel !== 'external'
