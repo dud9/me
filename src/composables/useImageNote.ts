@@ -3,8 +3,7 @@ import { NAvatar, NImage } from 'naive-ui'
 export function useImageNote({
   title = '',
   description = '',
-  imageSrc = 'src/assets/avatar.jpg',
-  // fallbackSrc = '',
+  imageSrc = 'src/assets/avatar2.jpg',
   metaDate = dayJs(new Date()).format('YYYY-MM-DD HH:mm:ss'),
   avatar = 'src/assets/avatar.jpg',
   hasLeaveMessage = false,
@@ -18,7 +17,6 @@ export function useImageNote({
     content: () =>
       h(NImage, {
         src: imageSrc,
-        // fallbackSrc,
       }),
     meta: metaDate,
     avatar: () =>

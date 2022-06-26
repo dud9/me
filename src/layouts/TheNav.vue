@@ -27,7 +27,7 @@ function showImage(type = 'qq') {
     title,
     description,
     imageSrc,
-    avatar: EnumAppMeta.avatar,
+    avatar: EnumAppMeta.avatar2,
     hasLeaveMessage,
     leaveMessage,
     onClose: () => imageNote.value = undefined,

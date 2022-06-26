@@ -10,7 +10,7 @@ function showImage() {
     title: '赞助我吧',
     description: '为作者送上一杯咖啡',
     imageSrc: EnumAppMeta.wechatPay,
-    avatar: EnumAppMeta.avatar,
+    avatar: EnumAppMeta.avatar2,
     hasLeaveMessage: true,
     leaveMessage: '谢谢老板~',
     onClose: () => imageNote.value = undefined,
