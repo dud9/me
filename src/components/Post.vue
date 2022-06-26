@@ -54,7 +54,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div flex="~ col" border="1 green">
+  <div flex="~ col">
     <div v-if="frontmatter.display ?? frontmatter.title" class="prose m-auto mb-8">
       <h1 class="mb-0">
         {{ frontmatter.display ?? frontmatter.title }}
