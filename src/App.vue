@@ -9,6 +9,17 @@ const theme = computed<ThemeType>(() => {
     ? darkTheme
     : null
 })
+
+useHead({
+  title: 'Faitsse',
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/svg+xml',
+      href: computed(() => isDark.value ? '/logo-dark.svg' : '/logo.svg'),
+    },
+  ],
+})
 </script>
 
 <template>
