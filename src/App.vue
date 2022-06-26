@@ -16,7 +16,7 @@ useHead({
     {
       rel: 'icon',
       type: 'image/svg+xml',
-      href: computed(() => isDark.value ? '/logo-dark.svg' : '/logo.svg'),
+      href: '/logo.svg',
     },
   ],
 })
