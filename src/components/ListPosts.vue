@@ -1,9 +1,53 @@
 <script setup lang="ts">
+import type { Post } from '~/types'
 
+const format = formatDate
+const router = useRouter()
+const posts = computed<Post[]>(() => {
+  const active = unref(activeSubNav)
+  return router.getRoutes()
+    .filter(i => i.path.startsWith(`/posts/${active}`)
+            && i.meta.frontmatter.date
+            && !i.path.endsWith('.html'))
+    .sort((a, b) => +new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date))
+    .map(i => ({
+      path: i.path,
+      title: i.meta.frontmatter.title,
+      date: i.meta.frontmatter.date,
+      lang: i.meta.frontmatter.lang,
+      duration: i.meta.frontmatter.duration,
+    })) || []
+})
 </script>
 
 <template>
-  <div>
-    1
-  </div>
+  <ul>
+    <template v-if="!posts.length">
+      <!-- <PageNotFound /> -->
+      { there is nothing }
+    </template>
+    <AppLink
+      v-for="route in posts" :key="route.path"
+      class="item block font-normal mb-6 mt-2 no-underline"
+      :to="route.path"
+    >
+      <li class="no-underline">
+        <div class="title text-lg">
+          {{ route.title }}
+          <sup
+            v-if="route.lang === 'zh'"
+            class="text-xs border border-current rounded px-1 pb-0.2"
+          >
+            中文
+          </sup>
+        </div>
+
+        <div class="time opacity-50 text-sm -mt-1">
+          {{ format(route.date) }}
+          <span v-if="route.duration" op80>· {{ route.duration }}</span>
+          <span v-if="route.platform" op80>· {{ route.platform }}</span>
+        </div>
+      </li>
+    </AppLink>
+  </ul>
 </template>
