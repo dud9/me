@@ -12,7 +12,7 @@ projects:
     - name: 'Petite'
       link: 'https://github.com/faitsse/petite'
       desc: 'Vite template with Naive Ui.'
-      icon: 'i-mdi-nativescript'
+      icon: 'i-mdi-nuxt'
 
   Latest:
     - name: 'Parfait'
