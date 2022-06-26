@@ -1,5 +1,17 @@
 <script setup lang="ts">
+import { EnumAppMeta } from '~/enum'
+
 defineProps<{ projects: Record<string, any[]> }>()
+function showImage() {
+  useImageNote({
+    title: '赞助我吧',
+    description: '为作者送上一杯咖啡',
+    imageSrc: EnumAppMeta.wechatPay,
+    avatar: EnumAppMeta.avatar,
+    hasLeaveMessage: true,
+    leaveMessage: '谢谢老板~',
+  })
+}
 </script>
 
 <template>
@@ -32,9 +44,9 @@ defineProps<{ projects: Record<string, any[]> }>()
       <em>
         Thanks for getting intersted in my works! If like them or find them useful, consider
         &nbsp;<a
-          href="https://github.com/sponsors/antfu"
-          target="_blank"
+          cursor-point
           rel="nofollow noopener noreferrer"
+          @click="showImage"
         >sponsoring me</a>&nbsp;to support me keeping them sustainable. Cheers! :)
       </em>
     </p>

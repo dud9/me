@@ -1,5 +1,5 @@
 ---
-title: Notes - Anthony Fu
+title: Notes - Faitsse
 display: Notes
 subtitle: Quick notes / tips
 description: Quick notes / tips
