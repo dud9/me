@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import autoRoutes from 'pages-generated'
 
 const routes = autoRoutes.map((i) => {
@@ -18,7 +18,7 @@ const scrollBehavior = (_to: any, _from: any, savedPosition: any) => {
 }
 
 const router = createRouter({
-  history: createWebHashHistory('/'),
+  history: createWebHistory('/'),
   routes,
   scrollBehavior,
 })
