@@ -6,7 +6,10 @@ const router = useRouter()
 function go2(path: string) {
   router.push(path)
 }
+const imageNote = ref()
 function showImage(type = 'qq') {
+  if (unref(imageNote))
+    return
   const title = type === 'qq'
     ? '联系我吧'
     : '赞助我吧'
@@ -27,6 +30,7 @@ function showImage(type = 'qq') {
     avatar: EnumAppMeta.avatar,
     hasLeaveMessage,
     leaveMessage,
+    onClose: () => imageNote.value = undefined,
   })
 }
 </script>

@@ -2,14 +2,18 @@
 import { EnumAppMeta } from '~/enum'
 
 defineProps<{ projects: Record<string, any[]> }>()
+const imageNote = ref()
 function showImage() {
-  useImageNote({
+  if (unref(imageNote))
+    return
+  imageNote.value = useImageNote({
     title: '赞助我吧',
     description: '为作者送上一杯咖啡',
     imageSrc: EnumAppMeta.wechatPay,
     avatar: EnumAppMeta.avatar,
     hasLeaveMessage: true,
     leaveMessage: '谢谢老板~',
+    onClose: () => imageNote.value = undefined,
   })
 }
 </script>
@@ -44,8 +48,9 @@ function showImage() {
       <em>
         Thanks for getting intersted in my works! If like them or find them useful, consider
         &nbsp;<a
-          cursor-point
+          cursor-pointer
           rel="nofollow noopener noreferrer"
+          target="_blank"
           @click="showImage"
         >sponsoring me</a>&nbsp;to support me keeping them sustainable. Cheers! :)
       </em>

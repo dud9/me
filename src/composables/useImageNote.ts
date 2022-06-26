@@ -9,16 +9,16 @@ export function useImageNote({
   avatar = 'src/assets/avatar.jpg',
   hasLeaveMessage = false,
   leaveMessage = 'Thank U~',
+  onClose = () => {},
 }) {
   const { message, notification } = useGlobalNaiveApi()
-  notification.create({
+  return notification.create({
     title,
     description,
     content: () =>
       h(NImage, {
         src: imageSrc,
         // fallbackSrc,
-        // lazy: true,
       }),
     meta: metaDate,
     avatar: () =>
@@ -31,6 +31,7 @@ export function useImageNote({
       if (hasLeaveMessage)
         message.success(leaveMessage)
     },
+    onClose,
   })
 }
 
