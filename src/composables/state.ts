@@ -1,4 +1,4 @@
-export type SubNavType = 'front' | 'end' | 'logic' | 'life'
+import type { SubNavType } from '~/types'
 
 export const activeSubNav = ref<SubNavType>('front')
 
