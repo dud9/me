@@ -26,6 +26,4 @@ projects:
 
 ---
 
-<ListProjects :projects="frontmatter.projects"/>
-
-<BackWidget />
+<ListProjects :projects="frontmatter.projects" />
