@@ -508,4 +508,3 @@ Note you don't have to link a repo to that, Netlify offers a great feature that 
 
 </article>
 
-<BackWidget />
