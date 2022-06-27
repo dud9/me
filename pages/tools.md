@@ -1,6 +1,6 @@
 ---
-title: Bookmarks - Faitsse
-display: Bookmarks
+title: Tools - Faitsse
+display: Tools
 subtitle: Some of my favorite websites/tools with excellent design and UX that I highly recommend
 ---
 
