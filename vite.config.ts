@@ -15,7 +15,6 @@ import Prism from 'markdown-it-prism'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
 import LinkAttributes from 'markdown-it-link-attributes'
-import alias from '@rollup/plugin-alias'
 import { slugify } from './scripts/slugify'
 
 // https://vitejs.dev/config/
@@ -31,8 +30,6 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
     }),
-
-    alias(),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
@@ -122,13 +119,4 @@ export default defineConfig({
       },
     }),
   ],
-
-  build: {
-    rollupOptions: {
-      onwarn(warning, next) {
-        if (warning.code !== 'UNUSED_EXTERNAL_IMPORT')
-          next(warning)
-      },
-    },
-  },
 })

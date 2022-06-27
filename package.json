@@ -21,7 +21,6 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.1",
     "@iconify/json": "^2.1.66",
-    "@rollup/plugin-alias": "^3.1.9",
     "@types/diacritics": "^1.3.1",
     "@types/fs-extra": "^9.0.13",
     "@types/markdown-it": "^12.2.3",
