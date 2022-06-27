@@ -1,7 +1,10 @@
 ---
 title: Faitsse
-avatar: 'src/assets/avatar2.jpg'
 ---
+
+<script setup lang="ts">
+import avatar from '~/assets/avatar2.jpg' 
+</script>
 
 <p align="center">
 <img :src="avatar" rounded-full w-80px h-80px/>
