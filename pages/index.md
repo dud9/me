@@ -1,9 +1,10 @@
 ---
 title: Faitsse
+avatar: 'src/assets/avatar2.jpg'
 ---
 
 <p align="center">
-<!-- <img src="src/assets/avatar2.jpg" rounded-full w-80px h-80px/> -->
+<img :src="avatar" rounded-full w-80px h-80px/>
 </p>
 
 Hey, I am Faitsse, a front & end engineer. I have work for 2 years, I write java
