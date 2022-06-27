@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { EnumAppMeta } from '~/enum'
+import avatar from '~/assets/avatar2.jpg'
+import wechatPayCode from '~/assets/wechat-pay-code.jpg'
 
 defineProps<{ projects: Record<string, any[]> }>()
 const imageNote = ref()
@@ -9,8 +10,8 @@ function showImage() {
   imageNote.value = useImageNote({
     title: '赞助我吧',
     description: '为作者送上一杯咖啡',
-    imageSrc: EnumAppMeta.wechatPay,
-    avatar: EnumAppMeta.avatar2,
+    imageSrc: wechatPayCode,
+    avatar,
     hasLeaveMessage: true,
     leaveMessage: '谢谢老板~',
     onClose: () => imageNote.value = undefined,

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { EnumAppMeta } from '~/enum'
 import avatar from '~/assets/avatar2.jpg'
 import qqScanCode from '~/assets/qq-scan-code.jpg'
+import wechatPayCode from '~/assets/wechat-pay-code.jpg'
 
 const navItemStyle = 'text-lg op-50 hover:op-100 focus:op-100'
 const router = useRouter()
@@ -20,7 +20,7 @@ function showImage(type = 'qq') {
     : '为作者送上一杯咖啡~'
   const imageSrc = type === 'qq'
     ? qqScanCode
-    : EnumAppMeta.wechatPay
+    : wechatPayCode
   const hasLeaveMessage = type !== 'qq'
   const leaveMessage = type === 'qq'
     ? ''
@@ -29,7 +29,6 @@ function showImage(type = 'qq') {
     title,
     description,
     imageSrc,
-    // avatar: EnumAppMeta.avatar2,
     avatar,
     hasLeaveMessage,
     leaveMessage,

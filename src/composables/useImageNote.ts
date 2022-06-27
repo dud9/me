@@ -1,11 +1,12 @@
 import { NAvatar, NImage } from 'naive-ui'
+import avatarDefaultImage from '~/assets/avatar2.jpg'
 
 export function useImageNote({
   title = '',
   description = '',
-  imageSrc = '/src/assets/avatar2.jpg',
+  imageSrc = '',
   metaDate = dayJs(new Date()).format('YYYY-MM-DD HH:mm:ss'),
-  avatar = '/src/assets/avatar.jpg',
+  avatar = avatarDefaultImage,
   hasLeaveMessage = false,
   leaveMessage = 'Thank U~',
   onClose = () => {},
