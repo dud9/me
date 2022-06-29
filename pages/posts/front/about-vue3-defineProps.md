@@ -10,24 +10,28 @@ duration: 2min
 // index.ts
 interface Props {
   name: string
+  things: string[]
 }
 
 const props = defineProps<Props>()
 
 const props = defineProps({
   name: String,
+  things: Array,
 })
 // Props 类型只能在该文件中内定义, 目前并不能导入外部的类型。
 
 // 带默认值
 const props = withDefaults(defineProps<Props>(), {
-  name: ''
+  name: '',
+  things: () => ([]) // 需要使用箭头函数
 })
 
 or
 
 const {
-  name = ''
+  name = '',
+  things = [],
 } = defineProps<Props>()
 
 ```
