@@ -17,4 +17,4 @@ and vue apps.
 
 Find me on [GitHub](https://github.com/faitsse).
 
-If you like my works, consider sponsoring me on [GitHub Sponsor](https://github.com/sponsors/antfu) to keep them sustainable.
+If you like my works, consider sponsoring me to keep them sustainable.
