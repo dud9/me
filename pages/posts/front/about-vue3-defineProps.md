@@ -6,6 +6,7 @@ duration: 2min
 ---
 
 ## defineProps
+需要注意的是 Props 类型只能在该文件中<MarkerTips />内定义, 目前并不能导入外部的类型。
 ```ts
 // index.ts
 interface Props {
@@ -19,7 +20,6 @@ const props = defineProps({
   name: String,
   things: Array,
 })
-// Props 类型只能在该文件中内定义, 目前并不能导入外部的类型。
 
 // 带默认值
 const props = withDefaults(defineProps<Props>(), {
@@ -27,8 +27,7 @@ const props = withDefaults(defineProps<Props>(), {
   things: () => ([]) // 需要使用箭头函数
 })
 
-or
-
+// or
 const {
   name = '',
   things = [],
