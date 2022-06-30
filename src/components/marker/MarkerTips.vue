@@ -1,5 +1,5 @@
 <template>
-  <Marker class="text-orange-400">
+  <Marker class="text-[#F77234]">
     Tips
   </Marker>
 </template>

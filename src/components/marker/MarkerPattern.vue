@@ -1,5 +1,5 @@
 <template>
-  <Marker class="text-pink-500">
+  <Marker class="text-[#165DFF]">
     Pattern
   </Marker>
 </template>

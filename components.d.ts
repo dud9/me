@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     Marker: typeof import('./src/components/marker/Marker.vue')['default']
     MarkerCore: typeof import('./src/components/marker/MarkerCore.vue')['default']
     MarkerPattern: typeof import('./src/components/marker/MarkerPattern.vue')['default']
+    MarkerPrefer: typeof import('./src/components/marker/MarkerPrefer.vue')['default']
     MarkerTips: typeof import('./src/components/marker/MarkerTips.vue')['default']
     NBackTop: typeof import('naive-ui')['NBackTop']
     NButton: typeof import('naive-ui')['NButton']

@@ -1,5 +1,5 @@
 <template>
-  <Marker class="text-green-500">
+  <Marker class="text-[#00B42A]">
     Core
   </Marker>
 </template>
