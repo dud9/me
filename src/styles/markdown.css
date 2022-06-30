@@ -34,7 +34,7 @@ html:not(.dark) {
 
 html.dark {
   --prism-foreground: #d4cfbf;
-  --prism-background: #111111;
+  --prism-background: #18181C;
   --prism-comment: #758575;
   --prism-string: #d48372;
   --prism-literal: #429988;
@@ -189,4 +189,24 @@ h6:focus .header-anchor {
 
 .table-of-contents ul > li {
   padding-left: 0.8rem;
+}
+
+.prose pre {
+  color: #393a34;
+  background-color: #fbfbfb;
+  overflow-x: auto;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+  border-radius: 0.375rem;
+  padding-top: 0.8571429em;
+  padding-right: 1.1428571em;
+  padding-bottom: 0.8571429em;
+  padding-left: 1.1428571em;
+}
+
+html.dark .prose pre { 
+  color: #d4cfbf;
+  background-color: #18181C;
 }

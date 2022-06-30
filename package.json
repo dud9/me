@@ -38,7 +38,6 @@
     "markdown-it-prism": "^2.2.4",
     "markdown-it-table-of-contents": "^0.6.0",
     "naive-ui": "^2.30.6",
-    "prismjs": "^1.28.0",
     "typescript": "^4.7.4",
     "unocss": "^0.39.3",
     "unplugin-auto-import": "^0.9.1",

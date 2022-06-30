@@ -24,7 +24,6 @@ specifiers:
   markdown-it-table-of-contents: ^0.6.0
   naive-ui: ^2.30.6
   prism-theme-vars: ^0.2.3
-  prismjs: ^1.28.0
   typescript: ^4.7.4
   unocss: ^0.39.3
   unplugin-auto-import: ^0.9.1
@@ -64,7 +63,6 @@ devDependencies:
   markdown-it-prism: registry.npmmirror.com/markdown-it-prism/2.2.4
   markdown-it-table-of-contents: registry.npmmirror.com/markdown-it-table-of-contents/0.6.0
   naive-ui: registry.npmmirror.com/naive-ui/2.30.6_vue@3.2.37
-  prismjs: registry.npmmirror.com/prismjs/1.28.0
   typescript: registry.npmmirror.com/typescript/4.7.4
   unocss: registry.npmmirror.com/unocss/0.39.3_vite@2.9.12
   unplugin-auto-import: registry.npmmirror.com/unplugin-auto-import/0.9.1_4jnm4urp6nwbe5o76bpn6kimyu
