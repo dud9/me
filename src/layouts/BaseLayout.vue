@@ -8,7 +8,7 @@ const refContentWrapper = ref()
 const route = useRoute()
 watch(() => route.path, (val, old) => {
   if (!old.startsWith(val)) {
-    const target = headerFixed
+    const target = unref(headerFixed)
       ? refContentWrapper
       : refBaseWrapper
     target.value?.scrollTo({ top: 0, behavior: 'smooth' })
