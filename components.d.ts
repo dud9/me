@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     ListPosts: typeof import('./src/components/ListPosts.vue')['default']
     ListProjects: typeof import('./src/components/ListProjects.vue')['default']
     Marker: typeof import('./src/components/marker/Marker.vue')['default']
+    MarkerBetter: typeof import('./src/components/marker/MarkerBetter.vue')['default']
     MarkerCore: typeof import('./src/components/marker/MarkerCore.vue')['default']
     MarkerImportance: typeof import('./src/components/marker/MarkerImportance.vue')['default']
     MarkerPattern: typeof import('./src/components/marker/MarkerPattern.vue')['default']
