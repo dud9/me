@@ -18,7 +18,10 @@ watch(() => route.path, (val, old) => {
 
 <template>
   <n-layout ref="refBaseWrapper" :native-scrollbar="false" h-screen w-screen min-h-screen>
-    <n-layout-header bordered :class="headerFixed ? 'fixed top-0 left-0' : ''">
+    <n-layout-header
+      bordered :class="headerFixed ? 'z-10' : ''"
+      :position="headerFixed ? 'absolute' : 'static'"
+    >
       <TheNav w-full class="h-[4.5rem]" />
     </n-layout-header>
     <n-layout
