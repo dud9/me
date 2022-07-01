@@ -15,6 +15,6 @@ and vue apps.
 
 ***
 
-Find me on [GitHub](https://github.com/du1nde).
+Find me on [GitHub](https://github.com/dud7ii).
 
 If you like my works, consider sponsoring me to keep them sustainable.
