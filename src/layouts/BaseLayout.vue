@@ -31,7 +31,12 @@ watch(headerFixed, () => {
 </script>
 
 <template>
-  <n-layout ref="refBaseWrapper" :native-scrollbar="false" h-screen w-screen min-h-screen :on-scroll="onScroll">
+  <n-layout
+    ref="refBaseWrapper"
+    :native-scrollbar="false"
+    h-screen w-screen min-h-screen
+    :on-scroll="onScroll"
+  >
     <n-layout-header
       bordered :class="headerFixed ? 'z-10' : ''"
       :position="headerFixed ? 'absolute' : 'static'"
