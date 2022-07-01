@@ -1,11 +1,9 @@
 ---
-title: Notes - Faitsse
+title: Notes - Duende
 display: Notes
 subtitle: Quick notes / tips
 description: Quick notes / tips
 ---
-
-[RSS Feed](https://antfu.me/notes/feed.xml)
 
 <article>
 

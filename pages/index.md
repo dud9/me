@@ -1,5 +1,5 @@
 ---
-title: Faitsse
+title: Duende
 ---
 
 <script setup lang="ts">
@@ -10,11 +10,11 @@ import avatar from '~/assets/avatar2.jpg'
 <img :src="avatar" rounded-full w-80px h-80px/>
 </p>
 
-Hey, I am Faitsse, a front & end engineer. I have work for 2 years, I write java
+Hey, I am Duende, a front & end engineer. I have work for 2 years, I write java
 and vue apps.
 
 ***
 
-Find me on [GitHub](https://github.com/faitsse).
+Find me on [GitHub](https://github.com/du1nde).
 
 If you like my works, consider sponsoring me to keep them sustainable.

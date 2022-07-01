@@ -41,7 +41,7 @@ function showImage(type = 'qq') {
   <div flex justify-between items-center px="10 lt-md:4">
     <div flex-inline text="2xl black-800 ![#36ad6a] dark:![#7fe7c4]" font-bold>
       <div i-mdi-gentoo mr-3 animate-pulse />
-      Faitsse
+      Duende
     </div>
     <nav flex gap-5 justify-end items-center>
       <n-tooltip
@@ -129,7 +129,7 @@ function showImage(type = 'qq') {
       >
         <template #trigger>
           <n-button text :focusable="false" lt-md:hidden :class="navItemStyle">
-            <a href="https://github.com/faitsse" target="_blank">
+            <a href="https://github.com/du1nde" target="_blank">
               <div i-uil-github-alt />
             </a>
           </n-button>

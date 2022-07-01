@@ -11,7 +11,7 @@ const theme = computed<ThemeType>(() => {
 })
 
 useHead({
-  title: 'Faitsse',
+  title: 'Duende',
   link: [
     {
       rel: 'icon',
