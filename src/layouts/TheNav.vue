@@ -129,7 +129,7 @@ function showImage(type = 'qq') {
       >
         <template #trigger>
           <n-button text :focusable="false" lt-md:hidden :class="navItemStyle">
-            <a href="https://github.com/dudiii" target="_blank">
+            <a href="https://github.com/dud9" target="_blank">
               <div i-uil-github-alt />
             </a>
           </n-button>
