@@ -1,3 +1,3 @@
 ## Live Demo
-<a href="https://gilded-sawine-cd304f.netlify.app">Preview</a>
+<a href="https://duende.netlify.app">Preview</a>
 
