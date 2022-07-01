@@ -1,5 +1,5 @@
 ---
-title: Blog - Faitsse
+title: Blog - Duende
 display: ''
 ---
 
