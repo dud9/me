@@ -14,10 +14,24 @@ watch(() => route.path, (val, old) => {
     target.value?.scrollTo({ top: 0, behavior: 'smooth' })
   }
 })
+
+let scrollTop = $ref(0)
+function onScroll(e: any) {
+  scrollTop = e?.target?.scrollTop || 0
+}
+watch(headerFixed, () => {
+  const top = scrollTop
+  const target = unref(headerFixed)
+    ? refContentWrapper
+    : refBaseWrapper
+  useTimeoutFn(() => {
+    target.value?.scrollTo({ top, behavior: 'smooth' })
+  }, 50)
+})
 </script>
 
 <template>
-  <n-layout ref="refBaseWrapper" :native-scrollbar="false" h-screen w-screen min-h-screen>
+  <n-layout ref="refBaseWrapper" :native-scrollbar="false" h-screen w-screen min-h-screen :on-scroll="onScroll">
     <n-layout-header
       bordered :class="headerFixed ? 'z-10' : ''"
       :position="headerFixed ? 'absolute' : 'static'"
@@ -29,6 +43,7 @@ watch(() => route.path, (val, old) => {
       :native-scrollbar="false"
       :position="headerFixed ? 'absolute' : 'static'"
       :class="headerFixed ? 'mt-[4.5rem]' : ''"
+      :on-scroll="onScroll"
     >
       <n-layout-content>
         <div flex="~ col" justify-center px-7 py-10>
