@@ -2,6 +2,7 @@
 import type { Post } from '~/types'
 
 const format = formatDate
+const { page, pageSize, itemCount } = toRefs(pagination)
 const router = useRouter()
 const posts = computed<Post[]>(() => {
   const active = unref(activeSubNav)
@@ -18,6 +19,19 @@ const posts = computed<Post[]>(() => {
       duration: i.meta.frontmatter.duration,
     })) || []
 })
+const postsByPage = computed<Post[]>(() => {
+  const _posts = unref(posts)
+  itemCount.value = _posts.length
+  if (_posts.length === 0)
+    return []
+  const _page = unref(page)
+  const _pageSize = unref(pageSize)
+  const [l, r] = [(_page - 1) * _pageSize, _page * _pageSize]
+  return _posts.slice(l, r)
+})
+const showPager = computed(() => {
+  return unref(posts).length > unref(pageSize)
+})
 </script>
 
 <template>
@@ -27,7 +41,7 @@ const posts = computed<Post[]>(() => {
       { there is nothing }
     </template>
     <AppLink
-      v-for="route in posts" :key="route.path"
+      v-for="route in postsByPage" :key="route.path"
       class="item block font-normal mb-6 mt-2 no-underline"
       :to="route.path"
     >
@@ -49,5 +63,6 @@ const posts = computed<Post[]>(() => {
         </div>
       </li>
     </AppLink>
+    <Pagination v-if="showPager" v-model:page="page" v-model:page-size="pageSize" :item-count="itemCount" />
   </ul>
 </template>

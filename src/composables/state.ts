@@ -13,3 +13,18 @@ export function changeActiveSubNav(nav: SubNavType) {
   activeSubNav.value = nav
   activeSubNavStorage!.value = nav
 }
+
+const basePagination = {
+  page: 1,
+  pageSize: 7,
+  itemCount: 0,
+}
+
+export const pagination = reactive({
+  ...basePagination,
+})
+
+watch(activeSubNav, () => {
+  const { page } = basePagination
+  pagination.page = page
+})
