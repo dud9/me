@@ -33,6 +33,10 @@ const pageSizes = [
   },
 ]
 
+const showSizePicker = computed(() => {
+  return itemCount > pageSizes[1].value
+})
+
 function changePage(page: number) {
   emits('update:page', page)
 }
@@ -49,7 +53,7 @@ function changePageSize(pageSize: number) {
       :page-size="pageSize"
       :item-count="itemCount"
       :page-slot="pageSlot"
-      show-size-picker
+      :show-size-picker="showSizePicker"
       :page-sizes="pageSizes"
       :on-update:page="changePage"
       :on-update:page-size="changePageSize"

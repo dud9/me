@@ -30,7 +30,7 @@ const postsByPage = computed<Post[]>(() => {
   return _posts.slice(l, r)
 })
 const showPager = computed(() => {
-  return unref(posts).length > unref(pageSize)
+  return unref(posts).length > 7
 })
 </script>
 
