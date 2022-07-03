@@ -29,7 +29,6 @@ declare module '@vue/runtime-core' {
     NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
     NLoadingBarProvider: typeof import('naive-ui')['NLoadingBarProvider']
-    NPagination: typeof import('naive-ui')['NPagination']
     NTooltip: typeof import('naive-ui')['NTooltip']
     PageNotFound: typeof import('./src/components/PageNotFound.vue')['default']
     Pagination: typeof import('./src/components/Pagination.vue')['default']
