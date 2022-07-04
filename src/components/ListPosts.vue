@@ -38,7 +38,7 @@ const showPager = computed(() => {
   <ul>
     <template v-if="!posts.length">
       <!-- <PageNotFound /> -->
-      { there is nothing }
+      { there is nothing. }
     </template>
     <AppLink
       v-for="route in postsByPage" :key="route.path"
