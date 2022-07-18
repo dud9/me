@@ -3,6 +3,8 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
+export {}
+
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppLink: typeof import('./src/components/AppLink.vue')['default']
@@ -39,5 +41,3 @@ declare module '@vue/runtime-core' {
     SubNav: typeof import('./src/components/SubNav.vue')['default']
   }
 }
-
-export {}
