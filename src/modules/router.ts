@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import autoRoutes from 'pages-generated'
+import type { UserModule } from '~/types'
 
 const routes = autoRoutes.map((i) => {
   return {
@@ -30,8 +31,6 @@ function createRouterGuard() {
 }
 createRouterGuard()
 
-export default {
-  install(app: any) {
-    app.use(router)
-  },
+export const install: UserModule = ({ use }) => {
+  use(router)
 }

@@ -4,13 +4,12 @@ import {
   NResult,
   create,
 } from 'naive-ui'
+import type { UserModule } from '~/types'
 
 const naive = create({
   components: [NAvatar, NImage, NResult],
 })
 
-export default {
-  install(app: any) {
-    app.use(naive)
-  },
+export const install: UserModule = ({ use }) => {
+  use(naive)
 }

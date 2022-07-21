@@ -1,3 +1,6 @@
+import type { App } from 'vue'
+export type UserModule = (app: App) => void
+
 export type SubNavType = 'front' | 'end' | 'logic' | 'life'
 
 export interface Post {
