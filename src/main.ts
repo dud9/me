@@ -6,9 +6,9 @@ import 'uno.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import type { UserModule } from './types'
+import type { AppContext, UserModule } from './types'
 
-function init(app: any) {
+function init(app: AppContext) {
   Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))
     .forEach(i => i.install?.(app))
   app.mount('#app')
