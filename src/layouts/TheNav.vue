@@ -49,7 +49,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" :class="navItemStyle" @click="go2('/posts')">
+          <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/posts')">
             <span lt-md:hidden>Blog</span>
             <div i-ri-article-line md:hidden />
           </n-button>
@@ -61,7 +61,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" :class="navItemStyle" @click="go2('/projects')">
+          <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/projects')">
             <span class="lt-md:hidden">Projects</span>
             <div i-ri-lightbulb-line md:hidden />
           </n-button>
@@ -73,7 +73,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" :class="navItemStyle" @click="go2('/demos')">
+          <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/demos')">
             <div i-mdi-sticker-emoji />
           </n-button>
         </template>
@@ -84,7 +84,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" :class="navItemStyle" @click="go2('/tools')">
+          <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/tools')">
             <div i-carbon-tools />
           </n-button>
         </template>
@@ -95,7 +95,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" :class="navItemStyle" @click="go2('/notes')">
+          <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/notes')">
             <div i-ri-sticky-note-line />
           </n-button>
         </template>
@@ -106,7 +106,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" lt-md:hidden :class="navItemStyle" @click="showImage('qq')">
+          <n-button text :focusable="false" :native-focus-behavior="false" lt-md:hidden :class="navItemStyle" @click="showImage('qq')">
             <div i-ri-qq-line />
           </n-button>
         </template>
@@ -117,7 +117,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" lt-md:hidden :class="navItemStyle" @click="showImage('sponsor')">
+          <n-button text :focusable="false" :native-focus-behavior="false" lt-md:hidden :class="navItemStyle" @click="showImage('sponsor')">
             <div i-ri-heart-line />
           </n-button>
         </template>
@@ -128,7 +128,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" lt-md:hidden :class="navItemStyle">
+          <n-button text :focusable="false" :native-focus-behavior="false" lt-md:hidden :class="navItemStyle">
             <a href="https://github.com/dud9" target="_blank">
               <div i-uil-github-alt />
             </a>

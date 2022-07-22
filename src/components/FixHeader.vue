@@ -18,7 +18,7 @@ const throttledToggle = useThrottleFn(() => {
       trigger="hover"
     >
       <template #trigger>
-        <n-button text :focusable="false" class="text-2xl" @click="throttledToggle">
+        <n-button text :focusable="false" :native-focus-behavior="false" class="text-2xl" @click="throttledToggle">
           <div
             :class="headerFixed
               ? 'i-ph-push-pin-slash-bold'
