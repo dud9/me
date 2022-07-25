@@ -38,8 +38,8 @@ watch(headerFixed, () => {
     :on-scroll="onScroll"
   >
     <n-layout-header
-      bg="!white dark:!dark-800"
-      bordered :class="headerFixed ? 'z-10' : ''"
+      :class="headerFixed ? 'z-10' : ''"
+      bg="!white dark:!dark-800" bordered
       :position="headerFixed ? 'absolute' : 'static'"
     >
       <TheNav w-full class="h-[4.5rem]" />
