@@ -64,7 +64,7 @@ function isActive(path: string) {
       <div relative flex items-center>
         <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/projects')">
           <div i-ri-lightbulb-line />
-          <span lt-sm:hidden ml-2>码</span>
+          <span lt-sm:hidden ml-2>碼</span>
         </n-button>
         <div v-if="isActive('/projects')" class="anchor-ball" lt-sm:hidden />
       </div>
@@ -85,7 +85,7 @@ function isActive(path: string) {
       <div relative flex items-center>
         <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/notes')">
           <div i-ri-sticky-note-line />
-          <span lt-sm:hidden ml-2>记</span>
+          <span lt-sm:hidden ml-2>記</span>
         </n-button>
         <div v-if="isActive('/notes')" class="anchor-ball" lt-sm:hidden />
       </div>
