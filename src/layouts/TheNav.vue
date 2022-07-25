@@ -40,8 +40,8 @@ function showImage(type = 'qq') {
 <template>
   <div flex justify-between items-center px="10 lt-md:4">
     <div flex-inline text="2xl" font-bold>
-      <!-- <div i-mdi-gentoo mr-3 animate-pulse /> -->
-      <span lt-md:hidden>Duende</span>
+      <div i-noto-v1-cat mr-3 />
+      <span lt-md:hidden text="black-800 dark:white">Duende</span>
     </div>
     <nav flex gap-5 justify-end items-center>
       <n-tooltip

@@ -41,12 +41,12 @@ watch(headerFixed, () => {
       bg="!white dark:!dark-800" bordered
       :position="headerFixed ? 'absolute' : 'static'"
     >
-      <TheNav w-full class="h-[4.5rem]" />
+      <TheNav w-full class="h-[3.8rem]" />
     </n-layout-header>
     <n-layout
       ref="refContentWrapper" bg="!white dark:![#050505]"
       :position="headerFixed ? 'absolute' : 'static'"
-      :class="headerFixed ? 'mt-[4.5rem]' : ''"
+      :class="headerFixed ? 'mt-[3.8rem]' : ''"
       :on-scroll="onScroll"
     >
       <n-layout-content bg-transparent>
