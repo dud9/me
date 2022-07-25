@@ -70,7 +70,7 @@ function isActive(path: string) {
       </div>
       <div relative flex items-center>
         <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/demos')">
-          <div i-mdi-sticker-emoji />
+          <div i-carbon-debug />
           <span lt-sm:hidden ml-2>案</span>
         </n-button>
         <div v-if="isActive('/demos')" class="anchor-ball" lt-sm:hidden />
