@@ -3,6 +3,7 @@ title: 关于 Vue3 defineProps
 date: 2022-06-29T21:10:30.000+00:00
 lang: zh
 duration: 2min
+tags: ['Vue3', 'script setup']
 ---
 
 ## defineProps

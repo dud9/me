@@ -15,7 +15,7 @@ const tagType = (idx: number) => {
 
 <template>
   <div wa h-full flex justify-start items-center>
-    <n-tag v-for="tag, idx in filterTags" :key="idx" :type="tagType(idx)" :bordered="false" mr-2>
+    <n-tag v-for="tag, idx in filterTags" :key="idx" :type="tagType(idx)" :bordered="false" mr-2 font-bold>
       {{ tag }}
     </n-tag>
   </div>
