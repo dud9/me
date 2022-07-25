@@ -163,8 +163,3 @@ h6:focus .header-anchor {
 .table-of-contents ul > li {
   padding-left: 0.8rem;
 }
-
-html.dark .prose pre { 
-  color: #d4cfbf !important;
-  background-color: #18181C !important;
-}

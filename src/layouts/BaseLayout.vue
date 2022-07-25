@@ -38,6 +38,7 @@ watch(headerFixed, () => {
     :on-scroll="onScroll"
   >
     <n-layout-header
+      bg="!white dark:!dark-800"
       bordered :class="headerFixed ? 'z-10' : ''"
       :position="headerFixed ? 'absolute' : 'static'"
     >
@@ -45,12 +46,12 @@ watch(headerFixed, () => {
     </n-layout-header>
     <n-layout
       ref="refContentWrapper"
-      :native-scrollbar="false"
+      :native-scrollbar="false" bg="!white dark:![#050505]"
       :position="headerFixed ? 'absolute' : 'static'"
       :class="headerFixed ? 'mt-[4.5rem]' : ''"
       :on-scroll="onScroll"
     >
-      <n-layout-content>
+      <n-layout-content bg-transparent>
         <div flex="~ col" justify-center px-7 py-10>
           <RouterView v-slot="{ Component, route }">
             <Transition name="fade-slide" mode="out-in" appear>
@@ -59,7 +60,7 @@ watch(headerFixed, () => {
           </RouterView>
         </div>
       </n-layout-content>
-      <n-layout-footer bg="white dark:[#101014]">
+      <n-layout-footer bg="white dark:[#050505]">
         <TheFoot w-full h-50px />
       </n-layout-footer>
       <n-back-top v-if="headerFixed" :right="50" />
