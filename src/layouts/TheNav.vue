@@ -153,7 +153,7 @@ function isActive(path: string) {
   left: 50%;
   opacity: 0.3;
 }
- .list-group:hover .anchor-ball {
+.list-group:hover .anchor-ball {
   opacity: 1;
   background-color: v-bind(anchorBallColor);
   border-radius: 3px;
