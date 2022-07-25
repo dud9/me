@@ -56,7 +56,7 @@ function isActive(path: string) {
     <nav flex gap-6 justify-end items-center class="list-group">
       <div relative flex items-center>
         <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/posts')">
-          <div i-ri-article-line />
+          <div i-carbon-align-horizontal-center />
           <span lt-sm:hidden ml-2 text-md>文</span>
         </n-button>
         <div v-if="isActive('/posts')" class="anchor-ball" lt-sm:hidden />
@@ -84,7 +84,7 @@ function isActive(path: string) {
       </div>
       <div relative flex items-center>
         <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/notes')">
-          <div i-ri-sticky-note-line />
+          <div i-ri-article-line />
           <span lt-sm:hidden ml-2>記</span>
         </n-button>
         <div v-if="isActive('/notes')" class="anchor-ball" lt-sm:hidden />
