@@ -8,6 +8,9 @@ import avatar from '~/assets/avatar2.jpg'
 
 <p align="center">
 <img :src="avatar" rounded-full class="!w-80px !h-80px" />
+<n-gradient-text :size="16" type="warning">
+  I'm just infected with a disease called curiosity.
+</n-gradient-text>
 </p>
 
 Hey, I am Duende, a front & end engineer. I have work for 2 years, I write java
