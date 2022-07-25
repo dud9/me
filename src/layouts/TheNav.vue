@@ -3,7 +3,7 @@ import avatar from '~/assets/avatar2.jpg'
 import qqScanCode from '~/assets/qq-scan-code.jpg'
 import wechatPayCode from '~/assets/wechat-pay-code.jpg'
 
-const navItemStyle = 'text-lg op-50 hover:op-100 focus:op-100'
+const navItemStyle = 'text-sm op-50 hover:op-100 focus:op-100'
 const router = useRouter()
 function go2(path: string) {
   router.push(path)
@@ -39,74 +39,37 @@ function showImage(type = 'qq') {
 
 <template>
   <div flex justify-between items-center px="10 lt-md:4">
-    <div flex-inline text="2xl" font-bold>
+    <div flex-inline text-xl font-bold>
       <div i-noto-v1-cat mr-3 />
       <span lt-md:hidden text="black-800 dark:white">Duende</span>
     </div>
     <nav flex gap-5 justify-end items-center>
+      <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/posts')">
+        <div i-ri-article-line />
+        <span lt-sm:hidden ml-2 text-md>文</span>
+      </n-button>
+      <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/projects')">
+        <div i-ri-lightbulb-line />
+        <span lt-sm:hidden ml-2>码</span>
+      </n-button>
+      <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/demos')">
+        <div i-mdi-sticker-emoji />
+        <span lt-sm:hidden ml-2>案</span>
+      </n-button>
+      <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/tools')">
+        <div i-carbon-tools />
+        <span lt-sm:hidden ml-2>工</span>
+      </n-button>
+      <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/notes')">
+        <div i-ri-sticky-note-line />
+        <span lt-sm:hidden ml-2>记</span>
+      </n-button>
       <n-tooltip
         placement="bottom"
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/posts')">
-            <span lt-md:hidden>Blog</span>
-            <div i-ri-article-line md:hidden />
-          </n-button>
-        </template>
-        <span> Posts </span>
-      </n-tooltip>
-      <n-tooltip
-        placement="bottom"
-        trigger="hover"
-      >
-        <template #trigger>
-          <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/projects')">
-            <span class="lt-md:hidden">Projects</span>
-            <div i-ri-lightbulb-line md:hidden />
-          </n-button>
-        </template>
-        <span> Projects </span>
-      </n-tooltip>
-      <n-tooltip
-        placement="bottom"
-        trigger="hover"
-      >
-        <template #trigger>
-          <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/demos')">
-            <div i-mdi-sticker-emoji />
-          </n-button>
-        </template>
-        <span> Demos </span>
-      </n-tooltip>
-      <n-tooltip
-        placement="bottom"
-        trigger="hover"
-      >
-        <template #trigger>
-          <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/tools')">
-            <div i-carbon-tools />
-          </n-button>
-        </template>
-        <span> Tools </span>
-      </n-tooltip>
-      <n-tooltip
-        placement="bottom"
-        trigger="hover"
-      >
-        <template #trigger>
-          <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/notes')">
-            <div i-ri-sticky-note-line />
-          </n-button>
-        </template>
-        <span> Notes </span>
-      </n-tooltip>
-      <n-tooltip
-        placement="bottom"
-        trigger="hover"
-      >
-        <template #trigger>
-          <n-button text :focusable="false" :native-focus-behavior="false" lt-md:hidden :class="navItemStyle" @click="showImage('qq')">
+          <n-button text :focusable="false" :native-focus-behavior="false" lt-sm:hidden :class="navItemStyle" @click="showImage('qq')">
             <div i-ri-qq-line />
           </n-button>
         </template>
@@ -117,7 +80,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" :native-focus-behavior="false" lt-md:hidden :class="navItemStyle" @click="showImage('sponsor')">
+          <n-button text :focusable="false" :native-focus-behavior="false" lt-sm:hidden :class="navItemStyle" @click="showImage('sponsor')">
             <div i-ri-heart-line />
           </n-button>
         </template>
@@ -128,7 +91,7 @@ function showImage(type = 'qq') {
         trigger="hover"
       >
         <template #trigger>
-          <n-button text :focusable="false" :native-focus-behavior="false" lt-md:hidden :class="navItemStyle">
+          <n-button text :focusable="false" :native-focus-behavior="false" lt-sm:hidden :class="navItemStyle">
             <a href="https://github.com/dud9" target="_blank">
               <div i-uil-github-alt />
             </a>
