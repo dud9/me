@@ -32,6 +32,8 @@ const postsByPage = computed<Post[]>(() => {
 const showPager = computed(() => {
   return unref(posts).length > 7
 })
+const getYear = (a: Date | string | number) => new Date(a).getFullYear()
+const isSameYear = (a: Date | string | number, b: Date | string | number) => a && b && getYear(a) === getYear(b)
 </script>
 
 <template>
@@ -40,29 +42,32 @@ const showPager = computed(() => {
       <!-- <PageNotFound /> -->
       { there is nothing. }
     </template>
-    <AppLink
-      v-for="route in postsByPage" :key="route.path"
-      class="item block font-normal mb-6 mt-2 no-underline"
-      :to="route.path"
-    >
-      <li class="no-underline">
-        <div class="title text-lg">
-          {{ route.title }}
-          <sup
-            v-if="route.lang === 'zh'"
-            class="text-xs border border-current rounded px-1 pb-0.2"
-          >
-            中文
-          </sup>
-        </div>
-
-        <div class="time opacity-50 text-sm -mt-1">
-          {{ format(route.date) }}
-          <span v-if="route.duration" op80>· {{ route.duration }}</span>
-          <span v-if="route.platform" op80>· {{ route.platform }}</span>
-        </div>
-      </li>
-    </AppLink>
+    <template v-for="route, idx in postsByPage" :key="route.path">
+      <div v-if="!isSameYear(route.date, postsByPage[idx - 1]?.date)" relative h20>
+        <span text-8em op10 absolute left--3rem top--2rem font-bold>{{ getYear(route.date) }}</span>
+      </div>
+      <AppLink
+        class="item block font-normal mb-6 mt-2 no-underline"
+        :to="route.path"
+      >
+        <li class="no-underline">
+          <div class="title text-lg">
+            {{ route.title }}
+            <sup
+              v-if="route.lang === 'zh'"
+              class="text-xs border border-current rounded px-1 pb-0.2"
+            >
+              中文
+            </sup>
+          </div>
+          <div class="time opacity-50 text-sm -mt-1">
+            {{ format(route.date) }}
+            <span v-if="route.duration" op80>· {{ route.duration }}</span>
+            <span v-if="route.platform" op80>· {{ route.platform }}</span>
+          </div>
+        </li>
+      </AppLink>
+    </template>
     <Pagination v-if="showPager" v-model:page="page" v-model:page-size="pageSize" :item-count="itemCount" />
   </ul>
 </template>
