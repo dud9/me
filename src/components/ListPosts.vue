@@ -2,6 +2,14 @@
 import type { Post } from '~/types'
 
 const format = formatDate
+const typographyType = computed(() => {
+  return {
+    front: 'success',
+    end: 'info',
+    logic: 'warning',
+    life: 'error',
+  }[unref(activeSubNav)] || 'default'
+})
 const { page, pageSize, itemCount } = toRefs(pagination)
 const router = useRouter()
 const posts = computed<Post[]>(() => {
@@ -52,13 +60,15 @@ const isSameYear = (a: Date | string | number, b: Date | string | number) => a &
       >
         <li class="no-underline">
           <div class="title text-lg">
-            {{ route.title }}
-            <sup
-              v-if="route.lang === 'zh'"
-              class="text-xs border border-current rounded px-1 pb-0.2"
-            >
-              中文
-            </sup>
+            <n-h3 :type="typographyType" prefix="bar" align-text>
+              {{ route.title }}
+              <sup
+                v-if="route.lang === 'zh'"
+                class="text-xs border border-current rounded px-1 pb-0.2"
+              >
+                中文
+              </sup>
+            </n-h3>
           </div>
           <div class="time opacity-50 text-sm -mt-1">
             {{ format(route.date) }}
