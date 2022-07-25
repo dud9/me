@@ -33,7 +33,6 @@ watch(headerFixed, () => {
 <template>
   <n-layout
     ref="refBaseWrapper"
-    :native-scrollbar="false"
     h-screen w-screen min-h-screen
     :on-scroll="onScroll"
   >
@@ -45,8 +44,7 @@ watch(headerFixed, () => {
       <TheNav w-full class="h-[4.5rem]" />
     </n-layout-header>
     <n-layout
-      ref="refContentWrapper"
-      :native-scrollbar="false" bg="!white dark:![#050505]"
+      ref="refContentWrapper" bg="!white dark:![#050505]"
       :position="headerFixed ? 'absolute' : 'static'"
       :class="headerFixed ? 'mt-[4.5rem]' : ''"
       :on-scroll="onScroll"

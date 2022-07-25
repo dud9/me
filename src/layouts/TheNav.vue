@@ -39,8 +39,8 @@ function showImage(type = 'qq') {
 
 <template>
   <div flex justify-between items-center px="10 lt-md:4">
-    <div flex-inline text="2xl black-800 ![#36ad6a] dark:![#7fe7c4]" font-bold>
-      <div i-mdi-gentoo mr-3 animate-pulse />
+    <div flex-inline text="2xl" font-bold>
+      <!-- <div i-mdi-gentoo mr-3 animate-pulse /> -->
       <span lt-md:hidden>Duende</span>
     </div>
     <nav flex gap-5 justify-end items-center>
