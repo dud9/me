@@ -35,6 +35,16 @@ function showImage(type = 'qq') {
     onClose: () => imageNote.value = undefined,
   })
 }
+
+const anchorBallColor = computed(() => {
+  return unref(isDark)
+    ? '#63E2B7'
+    : '#18A058'
+})
+const route = useRoute()
+function isActive(path: string) {
+  return route.path.startsWith(path)
+}
 </script>
 
 <template>
@@ -43,27 +53,42 @@ function showImage(type = 'qq') {
       <div i-noto-v1-cat mr-3 />
       <span lt-md:hidden text="black-800 dark:white">Duende</span>
     </div>
-    <nav flex gap-5 justify-end items-center>
-      <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/posts')">
-        <div i-ri-article-line />
-        <span lt-sm:hidden ml-2 text-md>文</span>
-      </n-button>
-      <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/projects')">
-        <div i-ri-lightbulb-line />
-        <span lt-sm:hidden ml-2>码</span>
-      </n-button>
-      <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/demos')">
-        <div i-mdi-sticker-emoji />
-        <span lt-sm:hidden ml-2>案</span>
-      </n-button>
-      <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/tools')">
-        <div i-carbon-tools />
-        <span lt-sm:hidden ml-2>工</span>
-      </n-button>
-      <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/notes')">
-        <div i-ri-sticky-note-line />
-        <span lt-sm:hidden ml-2>记</span>
-      </n-button>
+    <nav flex gap-5 justify-end items-center class="list-group">
+      <div relative flex items-center>
+        <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/posts')">
+          <div i-ri-article-line />
+          <span lt-sm:hidden ml-2 text-md>文</span>
+        </n-button>
+        <div v-if="isActive('/posts')" class="anchor-ball" lt-sm:hidden />
+      </div>
+      <div relative flex items-center>
+        <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/projects')">
+          <div i-ri-lightbulb-line />
+          <span lt-sm:hidden ml-2>码</span>
+        </n-button>
+        <div v-if="isActive('/projects')" class="anchor-ball" lt-sm:hidden />
+      </div>
+      <div relative flex items-center>
+        <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/demos')">
+          <div i-mdi-sticker-emoji />
+          <span lt-sm:hidden ml-2>案</span>
+        </n-button>
+        <div v-if="isActive('/demos')" class="anchor-ball" lt-sm:hidden />
+      </div>
+      <div relative flex items-center>
+        <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/tools')">
+          <div i-carbon-tools />
+          <span lt-sm:hidden ml-2>工</span>
+        </n-button>
+        <div v-if="isActive('/tools')" class="anchor-ball" lt-sm:hidden />
+      </div>
+      <div relative flex items-center>
+        <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/notes')">
+          <div i-ri-sticky-note-line />
+          <span lt-sm:hidden ml-2>记</span>
+        </n-button>
+        <div v-if="isActive('/notes')" class="anchor-ball" lt-sm:hidden />
+      </div>
       <n-tooltip
         placement="bottom"
         trigger="hover"
@@ -111,4 +136,30 @@ function showImage(type = 'qq') {
     </nav>
   </div>
 </template>
+
+<style scoped>
+.list-group {
+  height: 100%;
+  width: auto;
+}
+.anchor-ball {
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  transition: all 0.3s;
+  bottom: -10px;
+  left: 50%;
+  opacity: 0.3;
+}
+ .list-group:hover .anchor-ball {
+  opacity: 1;
+  background-color: v-bind(anchorBallColor);
+  border-radius: 3px;
+  width: 2.3rem;
+  height: 2px;
+  transform: translateX(-50%);
+}
+</style>
 
