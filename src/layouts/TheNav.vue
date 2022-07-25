@@ -53,7 +53,7 @@ function isActive(path: string) {
       <div i-noto-v1-cat mr-3 />
       <span lt-md:hidden text="black-800 dark:white">Duende</span>
     </div>
-    <nav flex gap-5 justify-end items-center class="list-group">
+    <nav flex gap-6 justify-end items-center class="list-group">
       <div relative flex items-center>
         <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/posts')">
           <div i-ri-article-line />
