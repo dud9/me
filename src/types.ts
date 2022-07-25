@@ -12,4 +12,5 @@ export interface Post {
   desc?: string
   platform?: string
   duration?: string
+  tags?: string[]
 }

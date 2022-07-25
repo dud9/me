@@ -68,6 +68,7 @@ onMounted(() => {
       <p v-if="frontmatter.subtitle" class="opacity-50 !-mt-6 italic">
         {{ frontmatter.subtitle }}
       </p>
+      <PostTags v-if="frontmatter.tags?.length > 0" :tags="frontmatter.tags" />
     </div>
     <article ref="content">
       <slot />
