@@ -7,11 +7,10 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-vue-markdown'
-import Unocss from 'unocss/vite'
+import UnoCSS from 'unocss/vite'
 import matter from 'gray-matter'
-import { presetAttributify, presetIcons, presetUno, presetWind } from 'unocss'
 import Anchor from 'markdown-it-anchor'
-import Prism from 'markdown-it-prism'
+import Shiki from 'markdown-it-shiki'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
 import LinkAttributes from 'markdown-it-link-attributes'
@@ -26,6 +25,8 @@ export default defineConfig({
   },
 
   plugins: [
+    UnoCSS(),
+
     Vue({
       include: [/\.vue$/, /\.md$/],
       reactivityTransform: true,
@@ -56,22 +57,6 @@ export default defineConfig({
       dts: 'components.d.ts',
     }),
 
-    // https://github.com/antfu/unocss
-    // see unocss.config.ts for config
-    Unocss({
-      shortcuts: {
-        'nav-item': 'op30 hover:op100]',
-      },
-      presets: [
-        presetAttributify(),
-        presetUno(),
-        presetIcons({
-          scale: 1.2,
-        }),
-        presetWind(),
-      ],
-    }),
-
     Pages({
       extensions: ['vue', 'md'],
       pagesDir: 'pages',
@@ -95,7 +80,12 @@ export default defineConfig({
         quotes: '""\'\'',
       },
       markdownItSetup(md) {
-        md.use(Prism)
+        md.use(Shiki, {
+          theme: {
+            light: 'vitesse-light',
+            dark: 'vitesse-dark',
+          },
+        })
         md.use(Anchor, {
           slugify,
           permalink: Anchor.permalink.linkInsideHeader({
