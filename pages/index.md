@@ -27,11 +27,11 @@ Good at C&V <div i-twemoji-face-savoring-food ml-2 />
 <div flex  items-center text-16px >
    <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone mx-2 /> 
    <span mr-3 font-bold>Concat me</span>
-   <div i-cib-qq text-red mx-3 cursor-pointer />
+   <div i-cib-qq text-red mx-3 cursor-pointer op="50 hover:!100" />
    <n-divider vertical />
-   <div i-cib-wechat mx-3 text="[#329672]" cursor-pointer />
+   <div i-cib-wechat mx-3 text="[#329672]" cursor-pointer op="50 hover:!100" />
    <n-divider vertical />
-   <div i-cib-twitter ml-3 text="[#1D9BF0]" cursor-pointer />
+   <div i-cib-twitter ml-3 text="[#1D9BF0]" cursor-pointer op="60 hover:!100" />
 </div>
 </div>
 </div>
