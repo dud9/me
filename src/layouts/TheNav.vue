@@ -51,7 +51,7 @@ function isActive(path: string) {
   <div flex justify-between items-center px="10 lt-md:4">
     <div flex-inline text-xl font-bold cursor-pointer @click="go2('/')">
       <div i-noto-v1-cat mr-3 />
-      <span lt-md:hidden text="black-800 dark:white">Duende</span>
+      <span lt-md:hidden text="black-800 dark:white">Harbor</span>
     </div>
     <nav flex gap-6 justify-end items-center class="list-group">
       <div relative flex items-center>
