@@ -6,8 +6,8 @@
 import avatar from '~/assets/avatar2.jpg' 
 </script>
 
-<div flex gap-x-5 lt-sm="flex-col gap-y-5" border="2 red" items-center>
-<img :src="avatar" rounded-full class="!w-150px !h-150px"  />
+<div flex gap-x-8 lt-sm="flex-col gap-y-5" items-center>
+<img :src="avatar" rounded-full class="!w-160px !h-160px"  />
 <div flex="~ col" lt-sm="!mt-[-40px] items-center">
 <span text-42px font-bold>Duende</span>
 <span flex-inline items-center>
