@@ -80,7 +80,7 @@ function isActive(path: string) {
           <div i-carbon-code />
           <span lt-sm:hidden ml-2>題</span>
         </n-button>
-        <div v-if="isActive('/demos')" class="anchor-ball" lt-sm:hidden />
+        <div v-if="isActive('/codes')" class="anchor-ball" lt-sm:hidden />
       </div>
       <div relative flex items-center>
         <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/tools')">
