@@ -28,6 +28,13 @@ watch(headerFixed, () => {
     target.value?.scrollTo({ top, behavior: 'smooth' })
   }, 50)
 })
+
+const { width } = useWindowSize()
+const backTopOffsetRight = computed(() => {
+  return width.value < 500
+    ? 30
+    : 50
+})
 </script>
 
 <template>
@@ -61,9 +68,9 @@ watch(headerFixed, () => {
       <n-layout-footer bg="white dark:[#050505]">
         <TheFoot w-full h-50px />
       </n-layout-footer>
-      <n-back-top v-if="headerFixed" :right="50" />
+      <n-back-top v-if="headerFixed" :right="backTopOffsetRight" />
     </n-layout>
     <FixHeader />
-    <n-back-top v-if="!headerFixed" :right="50" />
+    <n-back-top v-if="!headerFixed" :right="backTopOffsetRight" />
   </n-layout>
 </template>
