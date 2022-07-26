@@ -13,4 +13,5 @@ export interface Post {
   platform?: string
   duration?: string
   tags?: string[]
+  fixTop?: boolean
 }

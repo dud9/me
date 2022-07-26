@@ -1,15 +1,6 @@
 <script setup lang="ts">
 import type { Post } from '~/types'
 
-const format = formatDate
-const typographyType = computed(() => {
-  return {
-    front: 'success',
-    end: 'info',
-    logic: 'warning',
-    life: 'error',
-  }[unref(activeSubNav)] || 'default'
-})
 const { page, pageSize, itemCount } = toRefs(pagination)
 const router = useRouter()
 const posts = computed<Post[]>(() => {
@@ -25,11 +16,15 @@ const posts = computed<Post[]>(() => {
       date: i.meta.frontmatter.date,
       lang: i.meta.frontmatter.lang,
       duration: i.meta.frontmatter.duration,
-      tags: i.meta.frontmatter.tags,
+      tags: i.meta.frontmatter?.tags || [],
+      fixTop: i.meta.frontmatter?.fixTop || false,
     })) || []
 })
+const fixTopPosts = computed<Post[]>(() => {
+  return unref(posts).filter(i => i.fixTop) || []
+})
 const postsByPage = computed<Post[]>(() => {
-  const _posts = unref(posts)
+  const _posts = unref(posts).filter(i => !i.fixTop) || []
   itemCount.value = _posts.length
   if (_posts.length === 0)
     return []
@@ -51,33 +46,14 @@ const isSameYear = (a: Date | string | number, b: Date | string | number) => a &
       <!-- <PageNotFound /> -->
       { there is nothing. }
     </template>
-    <template v-for="route, idx in postsByPage" :key="route.path">
-      <div v-if="!isSameYear(route.date, postsByPage[idx - 1]?.date)" relative h20>
-        <span text-8em op10 absolute left--3rem top--2rem font-bold>{{ getYear(route.date) }}</span>
+    <template v-if="fixTopPosts.length > 0">
+      <ListPostsLink v-for="post in fixTopPosts" :key="post.path" :post="post" />
+    </template>
+    <template v-for="post, idx in postsByPage" :key="post.path">
+      <div v-if="!isSameYear(post.date, postsByPage[idx - 1]?.date)" relative h20>
+        <span text-8em op10 absolute left--3rem top--2rem font-bold>{{ getYear(post.date) }}</span>
       </div>
-      <AppLink
-        class="item block font-normal mb-6 mt-2 no-underline"
-        :to="route.path"
-      >
-        <li class="no-underline">
-          <div class="title text-lg">
-            <n-h3 :type="typographyType" prefix="bar" align-text>
-              {{ route.title }}
-              <sup
-                v-if="route.lang === 'zh'"
-                class="text-xs border border-current rounded px-1 pb-0.2"
-              >
-                中文
-              </sup>
-            </n-h3>
-          </div>
-          <div class="time opacity-50 text-sm -mt-1">
-            {{ format(route.date) }}
-            <span v-if="route.duration" op80>· {{ route.duration }}</span>
-            <span v-if="route.platform" op80>· {{ route.platform }}</span>
-          </div>
-        </li>
-      </AppLink>
+      <ListPostsLink :post="post" />
     </template>
     <Pagination v-if="showPager" v-model:page="page" v-model:page-size="pageSize" :item-count="itemCount" />
   </ul>

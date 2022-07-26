@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     DarkToggle: typeof import('./src/components/DarkToggle.vue')['default']
     FixHeader: typeof import('./src/components/FixHeader.vue')['default']
     ListPosts: typeof import('./src/components/ListPosts.vue')['default']
+    ListPostsLink: typeof import('./src/components/ListPostsLink.vue')['default']
     ListProjects: typeof import('./src/components/ListProjects.vue')['default']
     Marker: typeof import('./src/components/marker/Marker.vue')['default']
     MarkerBetter: typeof import('./src/components/marker/MarkerBetter.vue')['default']
