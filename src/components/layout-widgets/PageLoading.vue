@@ -40,20 +40,12 @@
 }
 
 @keyframes reOpacityChange {
-  0% {
+  0%, 40% {
     opacity: 1;
   }
 
-  50% {
-    opacity: .8;
-  }
-
-  80% {
-    opacity: .4;
-  }
-
   100% {
-    opacity: .1;
+    opacity: 0;
   }
 }
 
