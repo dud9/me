@@ -7,33 +7,33 @@ import avatar from '~/assets/avatar2.jpg'
 </script>
 
 <div flex gap-x-8 lt-sm="flex-col gap-y-5" items-center>
-<img :src="avatar" rounded-full class="!w-160px !h-160px"  />
-<div flex="~ col" lt-sm="!mt-[-40px] items-center">
-<span text-42px font-bold>Duende</span>
-<span flex-inline items-center>
-<div i-twemoji-flag-china /> <n-divider vertical />
-NanJing <n-divider vertical />
-<div i-noto-v1-man-facepalming-light-skin-tone />
-<n-divider vertical />
-Good at C&V <div i-twemoji-face-savoring-food ml-2 />
-</span>
-<n-gradient-text :size="16" type="success" >
-  I'm just infected with a disease called curiosity.
-</n-gradient-text>
-<span text-16px flex-inline items-center>Welcome2 my harbor! 
-<div i-twemoji-hand-with-index-finger-and-thumb-crossed-medium-light-skin-tone ml-2 />
-<div i-twemoji-two-hearts ml-2 />
-</span>
-<div flex  items-center text-16px >
-   <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone mx-2 /> 
-   <span mr-3 font-bold>Concat me</span>
-   <div i-cib-qq text-red mx-3 cursor-pointer op="50 hover:!100" />
-   <n-divider vertical />
-   <div i-cib-wechat mx-3 text="[#329672]" cursor-pointer op="50 hover:!100" />
-   <n-divider vertical />
-   <div i-cib-twitter ml-3 text="[#1D9BF0]" cursor-pointer op="60 hover:!100" />
-</div>
-</div>
+  <img :src="avatar" rounded-full class="!w-160px !h-160px">
+  <div flex="~ col" lt-sm="!mt-[-40px] items-center">
+    <span text-42px font-bold>Duende</span>
+    <span flex-inline items-center>
+      <div i-twemoji-flag-china /> <n-divider vertical />
+      NanJing <n-divider vertical />
+      <div i-noto-v1-man-facepalming-light-skin-tone />
+      <n-divider vertical />
+      Good at C&V <div i-twemoji-face-savoring-food ml-2 />
+    </span>
+    <n-gradient-text :size="16" type="success">
+      I'm just infected with a disease called curiosity.
+    </n-gradient-text>
+    <span text-16px flex-inline items-center>Welcome2 my harbor!
+      <div i-twemoji-hand-with-index-finger-and-thumb-crossed-medium-light-skin-tone ml-2 />
+      <div i-twemoji-two-hearts ml-2 />
+    </span>
+    <div flex items-center text-16px>
+      <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone mx-2 />
+      <span mr-3 font-bold>Concat me</span>
+      <div i-cib-qq text-red mx-3 cursor-pointer op="50 hover:!100" />
+      <n-divider vertical />
+      <div i-cib-wechat mx-3 text="[#329672]" cursor-pointer op="50 hover:!100" />
+      <n-divider vertical />
+      <div i-cib-twitter ml-3 text="[#1D9BF0]" cursor-pointer op="60 hover:!100" />
+    </div>
+  </div>
 </div>
 
 ***
