@@ -1,5 +1,5 @@
 import { NAvatar, NImage } from 'naive-ui'
-import avatarDefaultImage from '~/assets/avatar2.jpg'
+import avatarDefaultImage from '~/assets/avatar.jpg'
 
 export function useImageNote({
   title = '',
