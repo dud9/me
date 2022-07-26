@@ -64,7 +64,7 @@ function isActive(path: string) {
       <div relative flex items-center>
         <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/projects')">
           <div i-ri-lightbulb-line />
-          <span lt-sm:hidden ml-2>碼</span>
+          <span lt-sm:hidden ml-2>項</span>
         </n-button>
         <div v-if="isActive('/projects')" class="anchor-ball" lt-sm:hidden />
       </div>
@@ -72,6 +72,13 @@ function isActive(path: string) {
         <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/demos')">
           <div i-carbon-debug />
           <span lt-sm:hidden ml-2>案</span>
+        </n-button>
+        <div v-if="isActive('/demos')" class="anchor-ball" lt-sm:hidden />
+      </div>
+      <div relative flex items-center>
+        <n-button text :focusable="false" :native-focus-behavior="false" :class="navItemStyle" @click="go2('/codes')">
+          <div i-carbon-code />
+          <span lt-sm:hidden ml-2>題</span>
         </n-button>
         <div v-if="isActive('/demos')" class="anchor-ball" lt-sm:hidden />
       </div>
