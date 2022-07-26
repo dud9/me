@@ -20,12 +20,19 @@ useHead({
     },
   ],
 })
+
+const { bool: loading, setBool: setLoading } = useBoolean(true)
+useTimeoutFn(async () => {
+  await nextTick()
+  setLoading(false)
+}, 1500)
 </script>
 
 <template>
   <n-config-provider :theme="theme">
     <n-loading-bar-provider>
-      <BaseLayout />
+      <BaseLayout v-if="!loading" />
+      <PageLoading v-else />
     </n-loading-bar-provider>
   </n-config-provider>
 </template>
