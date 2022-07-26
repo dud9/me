@@ -23,6 +23,7 @@
   z-index: 2;
   animation-name: reOpacityChange;
   animation-duration: 2s;
+  animation-timeline: box-move;
 }
 
 .logo {
@@ -44,15 +45,15 @@
   }
 
   50% {
-    opacity: .8;
-  }
-
-  80% {
     opacity: .6;
   }
 
-  100% {
+  80% {
     opacity: .3;
+  }
+
+  100% {
+    opacity: .1;
   }
 }
 
