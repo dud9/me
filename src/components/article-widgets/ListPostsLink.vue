@@ -16,12 +16,15 @@ const typographyType = computed(() => {
     life: 'error',
   }[unref(activeSubNav)] || 'default'
 })
+
+const refLink = ref()
+const isHovered = useElementHover(refLink)
 </script>
 
 <template>
   <AppLink
+    ref="refLink" :to="post.path"
     class="item block font-normal mb-6 mt-2 no-underline"
-    :to="post.path"
   >
     <li class="no-underline">
       <div class="title text-lg flex justify-between">
@@ -34,7 +37,12 @@ const typographyType = computed(() => {
             中文
           </sup>
         </n-h3>
-        <div v-if="post.fixTop" i-ic-round-push-pin text-red-500 />
+        <div v-if="post.fixTop" flex items-center>
+          <n-tag v-if="isHovered" type="error" mr-2>
+            置顶
+          </n-tag>
+          <div i-ic-round-push-pin text-red-500 />
+        </div>
       </div>
       <div class="time opacity-50 text-sm -mt-1">
         {{ format(post.date) }}
