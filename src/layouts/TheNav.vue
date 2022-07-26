@@ -125,7 +125,7 @@ function isActive(path: string) {
         <template #trigger>
           <n-button text :focusable="false" :native-focus-behavior="false" lt-sm:hidden :class="navItemStyle">
             <a href="https://github.com/dud9" target="_blank">
-              <div i-uil-github-alt />
+              <div i-line-md-github-loop />
             </a>
           </n-button>
         </template>

@@ -4,6 +4,6 @@ const toggle = toggleDark
 
 <template>
   <n-button text :focusable="false" :native-focus-behavior="false" @click="toggle()">
-    <div i="ri-sun-line dark:ri-moon-line" />
+    <div i="line-md-sunny-outline-loop dark:line-md-moon" />
   </n-button>
 </template>
