@@ -34,7 +34,7 @@ const typographyType = computed(() => {
             中文
           </sup>
         </n-h3>
-        <div v-if="post.fixTop" i-ph-push-pin-bold text-red-500 />
+        <div v-if="post.fixTop" i-ic-round-push-pin text-red-500 />
       </div>
       <div class="time opacity-50 text-sm -mt-1">
         {{ format(post.date) }}
