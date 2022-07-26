@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" bg="white dark:[#050505]">
     <div class="mask" />
     <div class="logo" i-carbon-campsite text=" white" />
   </div>
@@ -11,7 +11,7 @@
   width: 100vw;
   height: 100vh;
   animation-name: scale;
-  animation-duration: 10s;
+  animation-duration: 1s;
   animation-timeline: box-move;
 }
 
@@ -19,10 +19,10 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(-75deg, #18A058, #63E2B7);
+  background: #1F8F93 !important;
   z-index: 2;
   animation-name: reOpacityChange;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timeline: box-move;
 }
 
@@ -31,11 +31,11 @@
   top: 50%;
   left: 50%;
   transform: translate(calc(-50% - 2px), calc(-50% - 2px));
-  width: 148px;
-  height: 232px;
+  width: 198px;
+  height: 282px;
   z-index: 3;
   animation-name: reOpacityChange;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timeline: box-move;
 }
 
@@ -45,11 +45,11 @@
   }
 
   50% {
-    opacity: .6;
+    opacity: .8;
   }
 
   80% {
-    opacity: .3;
+    opacity: .4;
   }
 
   100% {
@@ -58,24 +58,12 @@
 }
 
 @keyframes scale {
-  0% {
+  0%, 40% {
     transform: scale(1);
   }
 
-  25% {
-    transform: scale(3);
-  }
-
-  50% {
-    transform: scale(6);
-  }
-
-  75% {
-    transform: scale(9);
-  }
-
   100% {
-    transform: scale(12);
+    transform: scale(3);
   }
 }
 </style>
