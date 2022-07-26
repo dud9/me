@@ -25,7 +25,7 @@ import avatar from '~/assets/avatar2.jpg'
       <div i-twemoji-two-hearts ml-2 />
     </span>
     <div flex items-center text-16px>
-      <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone mx-2 />
+      <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone mr-2 />
       <span mr-3 font-bold>Concat me</span>
       <div i-cib-qq text-red mx-3 cursor-pointer op="50 hover:!100" />
       <n-divider vertical />
