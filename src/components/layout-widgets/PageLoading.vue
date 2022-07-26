@@ -61,12 +61,16 @@
     transform: scale(1);
   }
 
-  40% {
-    transform: scale(4);
+  25% {
+    transform: scale(3);
   }
 
-  70% {
-    transform: scale(8)
+  50% {
+    transform: scale(6);
+  }
+
+  75% {
+    transform: scale(9);
   }
 
   100% {
