@@ -25,6 +25,7 @@ const posts = computed<Post[]>(() => {
       date: i.meta.frontmatter.date,
       lang: i.meta.frontmatter.lang,
       duration: i.meta.frontmatter.duration,
+      tags: i.meta.frontmatter.tags,
     })) || []
 })
 const postsByPage = computed<Post[]>(() => {
