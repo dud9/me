@@ -25,16 +25,20 @@ Good at C&V <div i-twemoji-face-savoring-food ml-2 />
 <div i-twemoji-two-hearts ml-2 />
 </span>
 <div flex  items-center text-16px >
-Concat me
-   <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone ml-2 /> 
+   <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone mx-2 /> 
+   <span mr-3 font-bold>Concat me</span>
+   <div i-cib-qq text-red mx-3 cursor-pointer />
+   <n-divider vertical />
+   <div i-cib-wechat mx-3 text="[#329672]" cursor-pointer />
+   <n-divider vertical />
+   <div i-cib-twitter ml-3 text="[#1D9BF0]" cursor-pointer />
 </div>
 </div>
 </div>
-
-Hey, I am Duende, a front & end engineer. I have work for 2 years, I write java
-and vue apps.
 
 ***
+Hey, I am Duende, a front & end engineer. I have work for 2 years, I write java
+and vue apps.
 
 Find me on [GitHub](https://github.com/dud9).
 
