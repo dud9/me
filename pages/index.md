@@ -42,6 +42,7 @@ import avatar from '~/assets/avatar2.jpg'
 Hey, I am Duende, a front & end engineer. I have work for 2 years, I write java
 and vue apps.
 
+Dreaming up ideas and making them come true is where my passion lies. You can find my [full projects list here](/projects). 
 Find me on [GitHub](https://github.com/dud9).
 
 If you like my works, consider sponsoring me to keep them sustainable.
