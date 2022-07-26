@@ -28,7 +28,7 @@ import avatar from '~/assets/avatar2.jpg'
     </span>
     <div flex items-center text-16px>
       <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone mr-2 />
-      <span mr-3 font-bold>Concat me</span>
+      <span mr-3 font-bold>Contact me</span>
       <div i-cib-qq text-red mx-3 cursor-pointer hover:scale-115 />
       <n-divider vertical />
       <div i-cib-wechat mx-3 text="[#329672]" cursor-pointer hover:scale-115 />
