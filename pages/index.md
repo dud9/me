@@ -11,11 +11,13 @@ import avatar from '~/assets/avatar2.jpg'
   <div flex="~ col" lt-sm="!mt-[-40px] items-center">
     <span text-42px font-bold>Duende</span>
     <span flex-inline items-center>
-      <div i-twemoji-flag-china /> <n-divider vertical />
-      NanJing <n-divider vertical />
-      <div i-noto-v1-man-facepalming-light-skin-tone />
+      <div i-twemoji-flag-china mr-2/> <n-divider vertical />
+      <span mx-2>NanJing</span> <n-divider vertical />
+      <div i-noto-v1-man-facepalming-light-skin-tone mx-2 />
       <n-divider vertical />
-      Good at C&V <div i-twemoji-face-savoring-food ml-2 />
+      <span ml-2 flex-inline items-center>
+        Good at C&V <div i-twemoji-face-savoring-food ml-2 />
+      </span>
     </span>
     <n-gradient-text :size="16" type="success">
       I'm just infected with a disease called curiosity.
