@@ -13,8 +13,8 @@ import avatar from '~/assets/avatar2.jpg'
     <span flex-inline items-center>
       <div i-twemoji-flag-china mr-2/> <n-divider vertical />
       <span mx-2>NanJing</span> <n-divider vertical />
-      <div i-noto-v1-man-facepalming-light-skin-tone mx-2 />
-      <n-divider vertical />
+      <div i-twemoji-keycap-2 ml-2 mr-1 /> <div i-twemoji-keycap-3 mr-2 /> <n-divider vertical />
+      <div i-noto-v1-man-facepalming-light-skin-tone mx-2 /> <n-divider vertical />
       <span ml-2 flex-inline items-center>
         Good at C&V <div i-twemoji-face-savoring-food ml-2 />
       </span>
