@@ -25,7 +25,7 @@ const { bool: loading, setBool: setLoading } = useBoolean(true)
 useTimeoutFn(async () => {
   await nextTick()
   setLoading(false)
-}, 1500)
+}, 1000)
 </script>
 
 <template>

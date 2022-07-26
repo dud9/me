@@ -1,22 +1,76 @@
-<script setup lang="ts">
-const {
-  duration = 1500,
-} = defineProps<{
-  duration?: number
-}>()
-
-let iconPx = $ref(160)
-useTimeoutFn(() => {
-  iconPx = 500
-}, 10)
-</script>
-
 <template>
-  <div bg="[#18A058] dark:![#63E2B7]" w-screen h-screen flex justify-center items-center>
-    <div
-      i-carbon-campsite text=" white" transition-all
-      :class="`duration-${duration} !text-${iconPx}px`"
-    />
+  <div class="wrapper">
+    <div class="mask" />
+    <div class="logo" i-carbon-campsite text=" white" />
   </div>
 </template>
 
+<style scoped>
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  animation-name: scale;
+  animation-duration: 10s;
+  animation-timeline: box-move;
+}
+
+.mask {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(-75deg, #18A058, #63E2B7);
+  z-index: 2;
+  animation-name: reOpacityChange;
+  animation-duration: 2s;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% - 2px), calc(-50% - 2px));
+  width: 148px;
+  height: 232px;
+  z-index: 3;
+  animation-name: reOpacityChange;
+  animation-duration: 2s;
+  animation-timeline: box-move;
+}
+
+@keyframes reOpacityChange {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .8;
+  }
+
+  80% {
+    opacity: .6;
+  }
+
+  100% {
+    opacity: .3;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(4);
+  }
+
+  70% {
+    transform: scale(8)
+  }
+
+  100% {
+    transform: scale(12);
+  }
+}
+</style>
