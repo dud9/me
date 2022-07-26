@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import avatar from '~/assets/avatar2.jpg'
+import avatar from '~/assets/avatar.jpg'
 import qqScanCode from '~/assets/qq-scan-code.jpg'
 import wechatPayCode from '~/assets/wechat-pay-code.jpg'
 

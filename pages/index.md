@@ -3,7 +3,7 @@
 ---
 
 <script setup lang="ts">
-import avatar from '~/assets/avatar2.jpg' 
+import avatar from '~/assets/avatar.jpg' 
 </script>
 
 <div flex gap-x-8 lt-sm="flex-col gap-y-5" items-center>

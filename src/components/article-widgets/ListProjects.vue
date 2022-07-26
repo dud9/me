@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import avatar from '~/assets/avatar2.jpg'
+import avatar from '~/assets/avatar.jpg'
 import wechatPayCode from '~/assets/wechat-pay-code.jpg'
 
 defineProps<{ projects: Record<string, any[]> }>()
