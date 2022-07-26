@@ -19,7 +19,7 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background: #1F8F93 !important;
+  background: linear-gradient(-75deg, #63E2B7, #1F8F93);
   z-index: 2;
   animation-name: reOpacityChange;
   animation-duration: 1s;
@@ -40,7 +40,8 @@
 }
 
 @keyframes reOpacityChange {
-  0%, 40% {
+  0%,
+  40% {
     opacity: 1;
   }
 
@@ -50,7 +51,8 @@
 }
 
 @keyframes scale {
-  0%, 40% {
+  0%,
+  40% {
     transform: scale(1);
   }
 
