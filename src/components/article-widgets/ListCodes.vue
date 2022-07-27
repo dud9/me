@@ -111,9 +111,10 @@ const tagOptions = computed<{ label: string; value: string }[]>(() => {
   return tagList.map(tag => ({ label: tag, value: tag })) || []
 })
 
+const tagMaxNum = computed(() => width.value < 640 ? 3 : 5)
 function addTag(tagList: string[]) {
-  if (tagList.length > 5) {
-    const diff = tagList.length - 5
+  if (tagList.length > tagMaxNum.value) {
+    const diff = tagList.length - tagMaxNum.value
     filterTags.value = tagList.slice(diff)
   }
   else {
