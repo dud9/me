@@ -161,10 +161,14 @@ function closeTag(tagName: string) {
         </n-text>
         <n-switch v-model:value="filterThisMonth" :round="false" ml-2 :checked-value="true" />
       </div>
-      <div v-if="filterTags?.length" wa ha ml-4 p-3 border="1 dashed [#1F8F93]" flex-inline items-center>
+      <div
+        v-if="filterTags?.length"
+        wa ha ml-4 p-3 border="1 dashed [#1F8F93]"
+        flex-inline items-center :class="{ '!flex-wrap': width < 500 }"
+      >
         <n-tag
           v-for="tag, idx in filterTags"
-          :key="idx" type="info" closable mx-1 flex-wrap
+          :key="idx" type="info" closable mx-1
           :size="width < 500 ? 'small' : 'medium'"
           @close="closeTag(tag)"
         >
