@@ -23,19 +23,24 @@ const percentage = computed(() => {
     Number((hard / total * 100).toFixed(0)),
   ]
 })
+
+const { width } = useWindowSize()
+const hiddenSummary = computed(() => {
+  return unref(width) < 500
+})
 </script>
 
 <template>
   <div flex justify-center items-center>
     <n-progress
-      style="width: 120px; margin: 0 8px 12px 0"
+      style="width: 100px; margin: 4px 8px 8px 0;"
       type="multiple-circle"
       :show-indicator="false"
       :circle-gap="10"
       :percentage="percentage"
       :color="[themeVars.successColor, themeVars.warningColor, themeVars.errorColor]"
     />
-    <div flex="~ col" ml-3>
+    <div v-if="!hiddenSummary" flex="~ col" ml-3>
       <div flex-inline items-center>
         <div i-twemoji-zany-face mr-2 />
         <n-text type="primary" font-bold mr-4>
