@@ -219,7 +219,7 @@ function closeTag(tagName: string) {
                 <div
                   v-if="post.tags?.length"
                   flex-inline items-center ml-4
-                  :class="{ 'justify-start w-full border border-1 border-red': width < 500 }"
+                  :class="{ 'justify-start w-full': width < 500 }"
                 >
                   <n-tag
                     v-for="tag, idx in post.tags"
