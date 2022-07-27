@@ -34,6 +34,7 @@ const hiddenSummary = computed(() => {
   <div flex justify-center items-center>
     <n-progress
       style="width: 100px; margin: 4px 8px 8px 0;"
+      :class="{ '!mr-50px': hiddenSummary }"
       type="multiple-circle"
       :show-indicator="false"
       :circle-gap="10"
