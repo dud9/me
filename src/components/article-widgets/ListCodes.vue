@@ -36,8 +36,21 @@ const postsByYear = computed<Record<string, Post[]>>(() => {
 })
 
 const refCodeCnt = ref()
-const codeCntLabel = computed(() => {
-  return '累计完成'
+const codeTotalCnt = computed(() => {
+  const _posts = posts.value
+  const obj = {
+    total: 0,
+    simple: 0,
+    medium: 0,
+    hard: 0,
+  }
+  if (_posts.length === 0)
+    return obj
+  obj.total = _posts.length
+  obj.simple = (_posts.filter(i => i.difficulty === 'simple') || []).length
+  obj.medium = (_posts.filter(i => i.difficulty === 'medium') || []).length
+  obj.hard = (_posts.filter(i => i.difficulty === 'hard') || []).length
+  return obj
 })
 function playCodeCntAnimation() {
   refCodeCnt.value?.play()
@@ -56,20 +69,28 @@ function getPostType(difficulty: 'simple' | 'medium' | 'hard' = 'simple') {
 
 <template>
   <div flex="~ col">
-    <div flex justify-between items-center>
-      <n-statistic :label="codeCntLabel" tabular-nums>
-        <n-number-animation
-          ref="refCodeCnt"
-          show-separator
-          :from="0"
-          :to="30"
-          :active="false"
-        />
-        <template #suffix>
-          题
-        </template>
-      </n-statistic>
-      <ListCodesProgress v-bind="{ total: 30, simple: 5, medium: 10, hard: 15 }" />
+    <div flex items-center gap-x-10 lt-sm:gap-x-2>
+      <div flex="~ col">
+        <n-gradient-text type="info" font-bold text-xl>
+          累计完成
+        </n-gradient-text>
+        <n-statistic tabular-nums>
+          <n-number-animation
+            ref="refCodeCnt"
+            show-separator
+            :from="0"
+            :to="codeTotalCnt.total"
+            :active="false"
+          />
+          <template #suffix>
+            题
+            <n-gradient-text type="info" font-bold text-sm>
+              加油!
+            </n-gradient-text>
+          </template>
+        </n-statistic>
+      </div>
+      <ListCodesProgress v-bind="{ ...codeTotalCnt }" />
     </div>
     <div v-if="Object.keys(postsByYear).length" mt-30px>
       <template
