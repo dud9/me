@@ -14,4 +14,5 @@ export interface Post {
   duration?: string
   tags?: string[]
   fixTop?: boolean
+  difficulty?: 'simple' | 'medium' | 'hard'
 }

@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     BackWidget: typeof import('./src/components/layout-widgets/BackWidget.vue')['default']
     DarkToggle: typeof import('./src/components/layout-widgets/DarkToggle.vue')['default']
     FixHeader: typeof import('./src/components/layout-widgets/FixHeader.vue')['default']
+    ListCodes: typeof import('./src/components/article-widgets/ListCodes.vue')['default']
     ListPosts: typeof import('./src/components/article-widgets/ListPosts.vue')['default']
     ListPostsLink: typeof import('./src/components/article-widgets/ListPostsLink.vue')['default']
     ListProjects: typeof import('./src/components/article-widgets/ListProjects.vue')['default']
