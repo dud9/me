@@ -1,5 +1,7 @@
 ---
-title: Codes - Duende
-display: ''
+title: Code - Duende
+display: Codes
+subtitle: Question of the day
 ---
 
+<ListCodes/>
