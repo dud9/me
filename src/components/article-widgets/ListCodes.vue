@@ -65,11 +65,13 @@ function getPostType(difficulty: 'simple' | 'medium' | 'hard' = 'simple') {
     hard: ['error', 'Hard'],
   }[difficulty]
 }
+
+const { width } = useWindowSize()
 </script>
 
 <template>
   <div flex="~ col">
-    <div flex items-center gap-x-10 lt-sm:gap-x-2>
+    <div flex items-center gap-x-10 lt-sm:gap-x-2 :class="{ 'justify-between': width < 500 }">
       <div flex="~ col">
         <n-gradient-text type="info" font-bold text-xl>
           累计完成
