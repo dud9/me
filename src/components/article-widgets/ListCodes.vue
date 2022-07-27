@@ -205,7 +205,7 @@ function closeTag(tagName: string) {
             </template>
             <template #header>
               <div flex items-center :class="{ 'flex-col': width < 500 }">
-                <div>
+                <div flex items-center>
                   <AppLink
                     :to="post.path" class="mr-2 item"
                   >
@@ -216,7 +216,11 @@ function closeTag(tagName: string) {
                     {{ getPostType(post.difficulty)[1] }}
                   </n-tag>
                 </div>
-                <div v-if="post.tags?.length" flex-inline items-center ml-4>
+                <div
+                  v-if="post.tags?.length"
+                  flex-inline items-center ml-4
+                  :class="{ 'justify-start': width < 500 }"
+                >
                   <n-tag
                     v-for="tag, idx in post.tags"
                     :key="idx" type="info" :bordered="false"
