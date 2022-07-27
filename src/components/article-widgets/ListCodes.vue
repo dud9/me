@@ -204,16 +204,18 @@ function closeTag(tagName: string) {
               <div v-if="post.difficulty === 'hard'" i-twemoji-loudly-crying-face />
             </template>
             <template #header>
-              <div flex items-center>
-                <AppLink
-                  :to="post.path" class="mr-2 item"
-                >
-                  <span mr-3>{{ useDayJs(post.date).format('MM/DD') }}</span>
-                  <span>{{ post.title }}</span>
-                </AppLink>
-                <n-tag :type="getPostType(post.difficulty)[0]" size="small" round>
-                  {{ getPostType(post.difficulty)[1] }}
-                </n-tag>
+              <div flex items-center :class="{ 'flex-col': width < 500 }">
+                <div>
+                  <AppLink
+                    :to="post.path" class="mr-2 item"
+                  >
+                    <span mr-3>{{ useDayJs(post.date).format('MM/DD') }}</span>
+                    <span>{{ post.title }}</span>
+                  </AppLink>
+                  <n-tag :type="getPostType(post.difficulty)[0]" size="small" round>
+                    {{ getPostType(post.difficulty)[1] }}
+                  </n-tag>
+                </div>
                 <div v-if="post.tags?.length" flex-inline items-center ml-4>
                   <n-tag
                     v-for="tag, idx in post.tags"
