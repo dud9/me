@@ -94,15 +94,31 @@ function getPostType(difficulty: 'simple' | 'medium' | 'hard' = 'simple') {
   }[difficulty]
 }
 
-function addTag(tagName: string) {
-  let tags = filterTags.value
-  if (tags.includes(tagName))
-    return
-  if (tags.length === 5)
-    tags = tags.slice(1)
+const tagOptions = computed<{ label: string; value: string }[]>(() => {
+  const _posts = posts.value
+  if (_posts.length === 0)
+    return []
+  const tagList: string[] = []
+  _posts.forEach((i: Post) => {
+    if (i.tags?.length) {
+      for (const tagName of i.tags) {
+        if (tagList.includes(tagName))
+          continue
+        tagList.push(tagName)
+      }
+    }
+  })
+  return tagList.map(tag => ({ label: tag, value: tag })) || []
+})
 
-  tags.push(tagName)
-  filterTags.value = tags
+function addTag(tagList: string[]) {
+  if (tagList.length > 5) {
+    const diff = tagList.length - 5
+    filterTags.value = tagList.slice(diff)
+  }
+  else {
+    filterTags.value = tagList
+  }
 }
 
 function closeTag(tagName: string) {
@@ -154,9 +170,15 @@ function closeTag(tagName: string) {
         >
           {{ tag }}
         </n-tag>
-        <n-text type="info">
-          <div i-carbon-add-alt ml-2 cursor-pointer op-50 hover="op-100" />
-        </n-text>
+        <n-popselect
+          :value="filterTags" multiple
+          :options="tagOptions" trigger="click"
+          :on-update:value="addTag"
+        >
+          <n-text type="info">
+            <div i-carbon-add-alt ml-2 cursor-pointer op-50 hover="op-100" />
+          </n-text>
+        </n-popselect>
       </div>
     </div>
 
@@ -197,7 +219,7 @@ function closeTag(tagName: string) {
                     v-for="tag, idx in post.tags"
                     :key="idx" type="info" :bordered="false"
                     size="small" mr-2 cursor-pointer
-                    @click="addTag(tag)"
+                    @click="addTag([tag])"
                   >
                     {{ tag }}
                   </n-tag>

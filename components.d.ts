@@ -42,6 +42,7 @@ declare module '@vue/runtime-core' {
     NLoadingBarProvider: typeof import('naive-ui')['NLoadingBarProvider']
     NNumberAnimation: typeof import('naive-ui')['NNumberAnimation']
     NPagination: typeof import('naive-ui')['NPagination']
+    NPopselect: typeof import('naive-ui')['NPopselect']
     NProgress: typeof import('naive-ui')['NProgress']
     NSelect: typeof import('naive-ui')['NSelect']
     NStatistic: typeof import('naive-ui')['NStatistic']
