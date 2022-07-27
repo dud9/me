@@ -164,7 +164,7 @@ function closeTag(tagName: string) {
       <div v-if="filterTags?.length" wa ha ml-4 p-3 border="1 dashed [#1F8F93]" flex-inline items-center>
         <n-tag
           v-for="tag, idx in filterTags"
-          :key="idx" type="info" closable mx-1
+          :key="idx" type="info" closable mx-1 flex-wrap
           :size="width < 500 ? 'small' : 'medium'"
           @close="closeTag(tag)"
         >
