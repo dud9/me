@@ -3,6 +3,18 @@ import type { Post } from '~/types'
 
 const useDayJs = dayJs
 const router = useRouter()
+const { width } = useWindowSize()
+const filterThisMonth = ref(false)
+const filterTags = ref<string[]>([])
+
+function isThisMonth(date: string) {
+  const nowYear = useDayJs().year()
+  const targetYear = useDayJs(date).year()
+  const nowMonth = useDayJs().month()
+  const targetMonth = useDayJs(date).month()
+  return nowYear === targetYear && nowMonth === targetMonth
+}
+
 const posts = computed<Post[]>(() => {
   return router.getRoutes()
     .filter(i => i.path.startsWith('/codes')
@@ -20,9 +32,25 @@ const posts = computed<Post[]>(() => {
     })) || []
 })
 
+const filterPosts = computed<Post[]>(() => {
+  let _posts = posts.value
+  if (_posts.length === 0)
+    return _posts
+  if (filterThisMonth.value)
+    _posts = _posts.filter(i => isThisMonth(i.date))
+  if (filterTags.value.length > 0) {
+    _posts = _posts.filter((i) => {
+      if (i.tags?.length)
+        return i.tags.some((tag: string) => filterTags.value.includes(tag))
+      return false
+    })
+  }
+  return _posts
+})
+
 const postsByYear = computed<Record<string, Post[]>>(() => {
   const obj: Record<string, Post[]> = {}
-  const _post = posts.value
+  const _post = filterPosts.value
   if (_post.length === 0)
     return obj
   _post.forEach((i) => {
@@ -66,7 +94,23 @@ function getPostType(difficulty: 'simple' | 'medium' | 'hard' = 'simple') {
   }[difficulty]
 }
 
-const { width } = useWindowSize()
+function addTag(tagName: string) {
+  let tags = filterTags.value
+  if (tags.includes(tagName))
+    return
+  if (tags.length === 5)
+    tags = tags.slice(1)
+
+  tags.push(tagName)
+  filterTags.value = tags
+}
+
+function closeTag(tagName: string) {
+  const index = filterTags.value.findIndex(i => i === tagName)
+  if (index === -1)
+    return
+  filterTags.value.splice(index, 1)
+}
 </script>
 
 <template>
@@ -94,7 +138,29 @@ const { width } = useWindowSize()
       </div>
       <ListCodesProgress v-bind="{ ...codeTotalCnt }" />
     </div>
-    <div v-if="Object.keys(postsByYear).length" mt-30px>
+    <div flex items-center ha min-h-100px>
+      <div flex-inline items-center font-bold>
+        <n-text type="primary">
+          本月
+        </n-text>
+        <n-switch v-model:value="filterThisMonth" :round="false" ml-2 :checked-value="true" />
+      </div>
+      <div v-if="filterTags?.length" wa ha ml-4 p-3 border="1 dashed [#1F8F93]" flex-inline items-center>
+        <n-tag
+          v-for="tag, idx in filterTags"
+          :key="idx" type="info" closable mx-1
+          :size="width < 500 ? 'small' : 'medium'"
+          @close="closeTag(tag)"
+        >
+          {{ tag }}
+        </n-tag>
+        <n-text type="info">
+          <div i-carbon-add-alt ml-2 cursor-pointer op-50 hover="op-100" />
+        </n-text>
+      </div>
+    </div>
+
+    <div v-if="Object.keys(postsByYear).length" mt-10px>
       <template
         v-for="[key, posts] in Object.entries(postsByYear)
           .sort((a, b) => +Number(b[0]) - +Number(a[0]))"
@@ -127,7 +193,12 @@ const { width } = useWindowSize()
                   {{ getPostType(post.difficulty)[1] }}
                 </n-tag>
                 <div v-if="post.tags?.length" flex-inline items-center ml-4>
-                  <n-tag v-for="tag, idx in post.tags" :key="idx" type="info" :bordered="false" size="small" mr-2 cursor-pointer>
+                  <n-tag
+                    v-for="tag, idx in post.tags"
+                    :key="idx" type="info" :bordered="false"
+                    size="small" mr-2 cursor-pointer
+                    @click="addTag(tag)"
+                  >
                     {{ tag }}
                   </n-tag>
                 </div>
