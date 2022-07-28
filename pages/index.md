@@ -30,7 +30,7 @@ import avatar from '~/assets/avatar.jpg'
 }
 </style>
 
-<div flex gap-x-8 lt-sm="flex-col gap-y-5" items-center>
+<div flex gap-x-8 lt-sm="flex-col gap-y-4" items-center>
   <img :src="avatar" rounded-full class="!w-160px !h-160px">
   <div flex="~ col" lt-sm="!mt-[-40px] items-center">
     <span text-42px font-bold>Duende</span>
