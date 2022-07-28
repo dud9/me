@@ -17,17 +17,22 @@ html.dark {
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar:horizontal {
   height: 4px;
 }
-::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
   background: var(--c-bg);
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--c-scrollbar);
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--c-scrollbar-hover);
 }
@@ -37,10 +42,12 @@ html.dark {
 .fade-slide-enter-active {
   transition: all 0.3s;
 }
+
 .fade-slide-enter-from {
   opacity: 0;
   transform: translateX(-30px);
 }
+
 .fade-slide-leave-to {
   opacity: 0;
   transform: translateX(30px);
