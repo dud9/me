@@ -37,7 +37,10 @@ import avatar from '~/assets/avatar.jpg'
     <span class="typing-words">
       Welcome2 my harbor!
     </span>
-    <span flex-inline items-center mt-5>
+    <n-gradient-text :size="16" type="success">
+      I'm just infected with a disease called curiosity.
+    </n-gradient-text>
+    <span flex-inline items-center >
       <div i-twemoji-flag-china /> <n-divider vertical />
       NanJing <n-divider vertical />
       <div i-twemoji-keycap-2 mr-1 /> <div i-twemoji-keycap-3 /> <n-divider vertical />
@@ -46,9 +49,6 @@ import avatar from '~/assets/avatar.jpg'
         Good at C&V <div i-twemoji-face-savoring-food ml-2 />
       </span>
     </span>
-    <n-gradient-text :size="16" type="success">
-      I'm just infected with a disease called curiosity.
-    </n-gradient-text>
     <div flex items-center text-16px>
       <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone mr-2 />
       <span mr-3 font-bold>Contact me</span>
