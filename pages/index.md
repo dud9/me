@@ -7,7 +7,7 @@ import avatar from '~/assets/avatar.jpg'
 </script>
 <style scoped>
 .typing-words {
-  font: bold 200% Consolas, Monaco, monospace;
+  font: bold 150% Consolas, Monaco, monospace;
   border-right: 0.1em solid;
   width: 20ch;
   white-space: nowrap;
