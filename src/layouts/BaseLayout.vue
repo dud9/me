@@ -39,7 +39,7 @@ const backTopOffsetRight = computed(() => {
 
 let scrollingDown = $ref(false)
 watch(() => scrollTop, (val, old) => {
-  scrollingDown = val >= old
+  scrollingDown = val >= old && unref(headerFixed)
 })
 provide('scrollingDown', computed(() => unref(scrollingDown)))
 </script>
