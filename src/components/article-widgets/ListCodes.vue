@@ -165,7 +165,7 @@ function closeTag(tagName: string) {
       <ListCodesProgress v-bind="{ ...codeTotalCnt }" />
     </div>
     <div flex items-center ha min-h-100px>
-      <div flex-inline items-center font-bold :class="{ '!flex-col justify-center': width < 500 }">
+      <div flex-inline items-center font-bold :class="{ '!flex-col': width < 500 }">
         <n-text type="primary">
           本月
         </n-text>
