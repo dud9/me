@@ -5,13 +5,16 @@ import TheFoot from './TheFoot.vue'
 const headerFixed = fixedHeader
 const refBaseWrapper = ref()
 const refContentWrapper = ref()
+const refTargetWrapper = computed(() => {
+  return unref(headerFixed)
+    ? refContentWrapper.value
+    : refBaseWrapper.value
+})
 const route = useRoute()
 watch(() => route.path, (val, old) => {
   if (!old.startsWith(val)) {
-    const target = unref(headerFixed)
-      ? refContentWrapper
-      : refBaseWrapper
-    target.value?.scrollTo({ top: 0, behavior: 'smooth' })
+    const target = unref(refTargetWrapper)
+    target?.scrollTo({ top: 0, behavior: 'smooth' })
   }
 })
 
@@ -21,11 +24,9 @@ function onScroll(e: any) {
 }
 watch(headerFixed, () => {
   const top = scrollTop
-  const target = unref(headerFixed)
-    ? refContentWrapper
-    : refBaseWrapper
+  const target = unref(refTargetWrapper)
   useTimeoutFn(() => {
-    target.value?.scrollTo({ top, behavior: 'smooth' })
+    target?.scrollTo({ top, behavior: 'smooth' })
   }, 50)
 })
 
@@ -35,6 +36,12 @@ const backTopOffsetRight = computed(() => {
     ? 30
     : 50
 })
+
+let scrollingDown = $ref(false)
+watch(() => scrollTop, (val, old) => {
+  scrollingDown = val >= old
+})
+provide('scrollingDown', computed(() => unref(scrollingDown)))
 </script>
 
 <template>
