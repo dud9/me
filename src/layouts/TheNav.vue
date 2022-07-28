@@ -4,7 +4,7 @@ import NavPostInfo from './NavPostInfo.vue'
 
 const route = useRoute()
 const canShowNavPostInfo = computed(() => {
-  return route.meta.frontmatter?.showInfoInNav || false
+  return (route.meta.frontmatter?.postInfoInNav ?? '') !== '' || false
 })
 const scrollingDown = inject('scrollingDown')
 </script>

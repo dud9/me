@@ -15,5 +15,5 @@ export interface Post {
   tags?: string[]
   fixTop?: boolean
   difficulty?: 'simple' | 'medium' | 'hard'
-  showInfoInNav?: boolean
+  postInfoInNav?: string
 }
