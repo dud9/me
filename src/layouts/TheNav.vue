@@ -10,7 +10,7 @@ const scrollingDown = inject('scrollingDown')
 </script>
 
 <template>
-  <Transition name="fade-slide" mode="out-in" appear>
+  <Transition name="fade-bottom" mode="out-in" appear>
     <NavPostInfo v-if="canShowNavPostInfo && scrollingDown" />
     <NavListMenus v-else />
   </Transition>
