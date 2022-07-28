@@ -163,18 +163,19 @@ function closeTag(tagName: string) {
         <n-switch v-model:value="filterThisMonth" :round="false" ml-2 :checked-value="true" />
       </div>
       <div
-        v-if="filterTags?.length"
-        wa ha ml-4 p-3 border="1 dashed [#1F8F93]"
+        v-if="filterTags?.length" wa ha ml-4 p-3
         flex-inline items-center :class="{ '!flex-wrap': width < 500 }"
       >
-        <n-tag
-          v-for="tag, idx in filterTags"
-          :key="idx" type="info" closable mx-1
-          :size="width < 500 ? 'small' : 'medium'"
-          @close="closeTag(tag)"
-        >
-          {{ tag }}
-        </n-tag>
+        <TransitionGroup name="fade">
+          <n-tag
+            v-for="tag, idx in filterTags"
+            :key="idx" type="info" closable mx-1
+            :size="width < 500 ? 'small' : 'medium'"
+            @close="closeTag(tag)"
+          >
+            {{ tag }}
+          </n-tag>
+        </TransitionGroup>
         <n-popselect
           :value="filterTags" multiple
           :options="tagOptions" trigger="click"
@@ -199,47 +200,66 @@ function closeTag(tagName: string) {
           </n-h2>
         </div>
         <n-timeline mb-5 :icon-size="24">
-          <n-timeline-item
-            v-for="post, idx in posts"
-            :key="idx" class="flex items-center"
-          >
-            <template #icon>
-              <div v-if="post.difficulty === 'simple'" i-twemoji-zany-face />
-              <div v-if="post.difficulty === 'medium'" i-twemoji-confounded-face />
-              <div v-if="post.difficulty === 'hard'" i-twemoji-loudly-crying-face />
-            </template>
-            <template #header>
-              <div flex items-center :class="{ 'flex-col': width < 500 }">
-                <div flex items-center>
-                  <AppLink
-                    :to="post.path" class="mr-2 item"
+          <TransitionGroup name="fade">
+            <n-timeline-item
+              v-for="post, idx in posts"
+              :key="idx" class="flex items-center"
+            >
+              <template #icon>
+                <div v-if="post.difficulty === 'simple'" i-twemoji-zany-face />
+                <div v-if="post.difficulty === 'medium'" i-twemoji-confounded-face />
+                <div v-if="post.difficulty === 'hard'" i-twemoji-loudly-crying-face />
+              </template>
+              <template #header>
+                <div flex items-center :class="{ 'flex-col': width < 500 }">
+                  <div flex items-center>
+                    <AppLink
+                      :to="post.path" class="mr-2 item"
+                    >
+                      <span mr-3>{{ useDayJs(post.date).format('MM/DD') }}</span>
+                      <span>{{ post.title }}</span>
+                    </AppLink>
+                    <n-tag :type="getPostType(post.difficulty)[0]" size="small" round>
+                      {{ getPostType(post.difficulty)[1] }}
+                    </n-tag>
+                  </div>
+                  <div
+                    v-if="post.tags?.length"
+                    flex-inline items-center ml-4
+                    :class="{ 'justify-start w-full': width < 500 }"
                   >
-                    <span mr-3>{{ useDayJs(post.date).format('MM/DD') }}</span>
-                    <span>{{ post.title }}</span>
-                  </AppLink>
-                  <n-tag :type="getPostType(post.difficulty)[0]" size="small" round>
-                    {{ getPostType(post.difficulty)[1] }}
-                  </n-tag>
+                    <n-tag
+                      v-for="tag, idx in post.tags"
+                      :key="idx" type="info" :bordered="false"
+                      size="small" mr-2 cursor-pointer
+                      @click="addTag([tag])"
+                    >
+                      {{ tag }}
+                    </n-tag>
+                  </div>
                 </div>
-                <div
-                  v-if="post.tags?.length"
-                  flex-inline items-center ml-4
-                  :class="{ 'justify-start w-full': width < 500 }"
-                >
-                  <n-tag
-                    v-for="tag, idx in post.tags"
-                    :key="idx" type="info" :bordered="false"
-                    size="small" mr-2 cursor-pointer
-                    @click="addTag([tag])"
-                  >
-                    {{ tag }}
-                  </n-tag>
-                </div>
-              </div>
-            </template>
-          </n-timeline-item>
+              </template>
+            </n-timeline-item>
+          </TransitionGroup>
         </n-timeline>
       </template>
     </div>
   </div>
 </template>
+
+<style scoped>
+.fade-move,
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: scaleY(0.01) translate(30px, 0);
+}
+.fade-leave-active {
+  position: absolute;
+}
+</style>
