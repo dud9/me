@@ -23,7 +23,6 @@ projects:
       link: 'https://github.com/dud9/soft-tagbar'
       desc: 'Component for The Tags View.'
       icon: 'i-mdi-tag-multiple-outline'
-
 ---
 
 <ListProjects :projects="frontmatter.projects" />
