@@ -40,7 +40,7 @@ const backTopOffsetRight = computed(() => {
 <template>
   <n-layout
     ref="refBaseWrapper"
-    h-screen w-screen min-h-screen
+    h-screen w-screen min-h-screen bg="!white dark:![#050505]"
     :on-scroll="onScroll"
   >
     <n-layout-header
