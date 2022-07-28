@@ -3,14 +3,15 @@ const route = useRoute()
 </script>
 
 <template>
-  <div flex justify-between items-center px="15">
-    <div flex="~ col" items-center>
+  <div flex justify-between items-center px-20>
+    <div flex justify-center items-center h-full border="1 red">
+      <n-tag type="success" size="small" mr-3>
+        {{ route.meta.frontmatter?.postInfoInNav || '' }}
+      </n-tag>
       <n-h3 prefix="bar" align-text>
-        <n-text>{{ route.meta.frontmatter?.title || '' }}</n-text>
+        {{ route.meta.frontmatter?.title || '' }}
       </n-h3>
-      <n-text v-if="route.meta.frontmatter?.subtitle">
-        {{ route.meta.frontmatter?.subtitle || '' }}
-      </n-text>
+      <n-text>{{ route.meta.frontmatter?.subtitle || '' }}</n-text>
     </div>
 
     <div ml-12>
