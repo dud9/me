@@ -112,7 +112,7 @@ const tagOptions = computed<{ label: string; value: string }[]>(() => {
 })
 
 const tagMaxNum = computed(() => width.value < 640 ? 3 : 5)
-function addTag(tagList: string[]) {
+function addTagByList(tagList: string[]) {
   if (tagList.length > tagMaxNum.value) {
     const diff = tagList.length - tagMaxNum.value
     filterTags.value = tagList.slice(diff)
@@ -120,6 +120,15 @@ function addTag(tagList: string[]) {
   else {
     filterTags.value = tagList
   }
+}
+function addTagOneByOne(tagName: string) {
+  if (filterTags.value.includes(tagName))
+    return
+  if (filterTags.value.length + 1 > tagMaxNum.value)
+    addTagByList([...filterTags.value, tagName])
+
+  else
+    filterTags.value.push(tagName)
 }
 
 function closeTag(tagName: string) {
@@ -179,7 +188,7 @@ function closeTag(tagName: string) {
         <n-popselect
           :value="filterTags" multiple
           :options="tagOptions" trigger="click"
-          :on-update:value="addTag"
+          :on-update:value="addTagByList"
         >
           <n-text type="info">
             <div i-carbon-add-alt ml-2 cursor-pointer op-50 hover="op-100" />
@@ -232,7 +241,7 @@ function closeTag(tagName: string) {
                       v-for="tag, idx in post.tags"
                       :key="idx" type="info" :bordered="false"
                       size="small" mr-2 cursor-pointer
-                      @click="addTag([tag])"
+                      @click="addTagOneByOne(tag)"
                     >
                       {{ tag }}
                     </n-tag>
