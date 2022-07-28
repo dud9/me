@@ -8,24 +8,16 @@ import avatar from '~/assets/avatar.jpg'
 <style scoped>
 .typing-words {
   font: bold 150% Consolas, Monaco, monospace;
-  border-right: 0.1em solid;
   width: 20ch;
   white-space: nowrap;
   margin: 0;
   overflow: hidden;
-  animation: typing 2.3s steps(19, end),
-    cursor-blink 0.3s step-end infinite alternate;
+  animation: typing 2.3s steps(20, end);
 }
 
 @keyframes typing {
   from {
     width: 0;
-  }
-}
-
-@keyframes cursor-blink {
-  50% {
-    border-color: transparent;
   }
 }
 </style>
