@@ -44,13 +44,12 @@ import avatar from '~/assets/avatar.jpg'
     <div flex items-center text-16px>
       <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone mr-2 />
       <span mr-3 font-bold>Contact me</span>
-      <div i-twemoji-hand-with-index-finger-and-thumb-crossed-medium-light-skin-tone />
-      <div i-twemoji-two-hearts mx-2 />
-      <div i-cib-qq text-red mx-3 cursor-pointer hover:scale-115 />
+      <div i-twemoji-two-hearts mr-4 />
+      <div i-carbon-letter-qq mx-2 cursor-pointer hover:text-red text-20px />
       <n-divider vertical />
-      <div i-cib-wechat mx-3 text="[#329672]" cursor-pointer hover:scale-115 />
+      <div i-carbon-logo-wechat mx-2 cursor-pointer hover="text-[#329672]" text-20px />
       <n-divider vertical />
-      <div i-cib-twitter ml-3 text="[#1D9BF0]" cursor-pointer hover:scale-115 />
+      <div i-carbon-logo-twitter ml-2 cursor-pointer hover="text-[#1D9BF0]" text-20px />
     </div>
   </div>
 </div>
