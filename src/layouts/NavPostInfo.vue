@@ -3,18 +3,22 @@ const route = useRoute()
 </script>
 
 <template>
-  <div flex justify-between items-center px-20>
-    <div flex justify-center items-center h-full border="1 red">
+  <div flex justify-between items-center px-10 lt-md="px-5">
+    <div flex items-center lt-sm:hidden>
       <n-tag type="success" size="small" mr-3>
         {{ route.meta.frontmatter?.postInfoInNav || '' }}
       </n-tag>
-      <n-h3 prefix="bar" align-text>
-        {{ route.meta.frontmatter?.title || '' }}
-      </n-h3>
-      <n-text>{{ route.meta.frontmatter?.subtitle || '' }}</n-text>
+      <n-tag
+        v-for="tag, idx in route.meta.frontmatter?.tags || []" :key="idx"
+        type="info" size="small" mr-3
+      >
+        {{ tag }}
+      </n-tag>
     </div>
-
-    <div ml-12>
+    <n-h2 prefix="bar" strong ma>
+      {{ route.meta.frontmatter?.title || '' }}
+    </n-h2>
+    <div v-if="route.meta.frontmatter?.description">
       {{ route.meta.frontmatter?.description || '' }}
     </div>
   </div>
