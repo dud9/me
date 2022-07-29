@@ -20,7 +20,10 @@ const route = useRoute()
         {{ route.meta.frontmatter?.title || '' }}
       </n-h2>
       <div v-if="route.meta.frontmatter?.description" ml-2 lt-sm:hidden>
-        <n-ellipsis :class="route.meta.frontmatter?.tags?.length > 1 ? '!max-w-350px' : '!max-w-500px'" lt-lg="!max-w-240px">
+        <n-ellipsis
+          :class="route.meta.frontmatter?.tags?.length > 1 ? '!max-w-350px' : '!max-w-500px'"
+          lt-lg="!max-w-240px" op-30
+        >
           {{ route.meta.frontmatter?.description || '' }}
         </n-ellipsis>
       </div>
