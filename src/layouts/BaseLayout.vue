@@ -19,8 +19,12 @@ watch(() => route.path, (val, old) => {
 })
 
 let scrollTop = $ref(0)
+let clientHeight = $ref(0)
+let scrollHeight = $ref(0)
 function onScroll(e: any) {
   scrollTop = e?.target?.scrollTop || 0
+  clientHeight = e?.target?.clientHeight || 0
+  scrollHeight = e?.target?.scrollHeight || 0
 }
 watch(headerFixed, () => {
   const top = scrollTop
@@ -39,7 +43,17 @@ const backTopOffsetRight = computed(() => {
 
 let scrollingDown = $ref(false)
 const throttleScroll = useThrottleFn((val, old) => {
-  scrollingDown = val >= old && unref(headerFixed)
+  if (!unref(headerFixed)) {
+    scrollingDown = false
+  }
+  else {
+    if (val <= 0)
+      scrollingDown = false
+    else if (val + clientHeight >= scrollHeight)
+      scrollingDown = true
+    else
+      scrollingDown = val >= old
+  }
 }, 50)
 watch(() => scrollTop, throttleScroll)
 provide('scrollingDown', computed(() => unref(scrollingDown)))
