@@ -4,6 +4,8 @@
 
 <script setup lang="ts">
 import avatar from '~/assets/avatar.jpg' 
+import qqImage from '~/assets/qq-scan-code.jpg'
+import wxImage from '~/assets/wechat-pay-code.jpg'
 </script>
 <style scoped>
 .typing-words {
@@ -45,11 +47,26 @@ import avatar from '~/assets/avatar.jpg'
       <div i-twemoji-backhand-index-pointing-right-medium-light-skin-tone mr-2 />
       <span mr-3 font-bold>Contact me</span>
       <div i-twemoji-two-hearts mr-4 />
-      <div i-carbon-letter-qq mx-2 cursor-pointer hover:text-red text-20px />
+      <n-popover trigger="click" placement="bottom">
+        <template #trigger>
+          <div i-carbon-letter-qq mx-2 cursor-pointer hover:text-red text-20px />
+        </template>
+        <n-image width="100" height="100" :src="qqImage" /> 
+      </n-popover>   
       <n-divider vertical />
-      <div i-carbon-logo-wechat mx-2 cursor-pointer hover="text-[#329672]" text-20px />
+      <n-popover trigger="click" placement="bottom">
+        <template #trigger>
+          <div i-carbon-logo-wechat mx-2 cursor-pointer hover="text-[#329672]" text-20px />
+        </template>
+        <n-image width="100" height="100" :src="wxImage" /> 
+      </n-popover>      
       <n-divider vertical />
-      <div i-carbon-logo-twitter ml-2 cursor-pointer hover="text-[#1D9BF0]" text-20px />
+      <n-popover trigger="click" placement="bottom">
+        <template #trigger>
+          <div i-carbon-logo-twitter ml-2 cursor-pointer hover="text-[#1D9BF0]" text-20px />
+        </template>
+        <n-image width="100" height="100" :src="qqImage" /> 
+      </n-popover>  
     </div>
   </div>
 </div>
