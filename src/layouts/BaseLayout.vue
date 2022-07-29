@@ -38,9 +38,10 @@ const backTopOffsetRight = computed(() => {
 })
 
 let scrollingDown = $ref(false)
-watch(() => scrollTop, (val, old) => {
+const throttleScroll = useThrottleFn((val, old) => {
   scrollingDown = val >= old && unref(headerFixed)
-})
+}, 50)
+watch(() => scrollTop, throttleScroll)
 provide('scrollingDown', computed(() => unref(scrollingDown)))
 </script>
 
