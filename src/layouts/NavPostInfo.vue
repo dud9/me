@@ -30,11 +30,11 @@ const route = useRoute()
     </div>
 
     <div flex items-center>
-      <n-button strong secondary round mr-2>
+      <n-button strong secondary round>
         <div i-carbon-share mr-2 />
         分享
       </n-button>
-      <span font-bold text-16px op-30 lt-sm:hidden>Horbar</span>
+      <span font-bold text-16px op-30 ml-2 lt-sm:hidden>Horbar</span>
     </div>
   </div>
 </template>
