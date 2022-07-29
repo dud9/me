@@ -3,6 +3,7 @@ import {
   NDivider,
   NGradientText,
   NImage,
+  NPopover,
   NPopselect,
   NProgress,
   NResult,
@@ -29,6 +30,7 @@ const naive = create({
     NTag,
     NTimeline,
     NTimelineItem,
+    NPopover,
   ],
 })
 
