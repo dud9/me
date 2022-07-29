@@ -1,5 +1,25 @@
 <script setup lang="ts">
 const route = useRoute()
+const { message } = useGlobalNaiveApi()
+const currentUrl = computed(() => {
+  return window.location.href || '/'
+})
+const { copy, copied, isSupported } = useClipboard({ source: currentUrl.value })
+const debouncedShare = useDebounceFn(() => {
+  share()
+}, 200)
+function share() {
+  if (!isSupported) {
+    message.error('当前不支持该操作哦~')
+    return
+  }
+  copy()
+  if (copied)
+    message.success('链接以复制到剪切板中, 快去分享吧~')
+
+  else
+    message.error('链接复制失败, 请重试一下~')
+}
 </script>
 
 <template>
@@ -30,7 +50,7 @@ const route = useRoute()
     </div>
 
     <div flex items-center>
-      <n-button strong secondary round>
+      <n-button strong secondary round @click="debouncedShare">
         <div i-carbon-share mr-2 />
         分享
       </n-button>
