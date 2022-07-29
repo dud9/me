@@ -34,7 +34,7 @@ const route = useRoute()
         <div i-carbon-share mr-2 />
         分享
       </n-button>
-      <span font-bold text-16px op-30>Horbar</span>
+      <span font-bold text-16px op-30 lt-sm:hidden>Horbar</span>
     </div>
   </div>
 </template>
