@@ -4,7 +4,7 @@ const route = useRoute()
 
 <template>
   <div flex justify-between items-center px-10 lt-md="px-5">
-    <div flex items-center lt-sm:hidden>
+    <div flex items-center lt-lg:hidden>
       <n-tag type="success" size="small" mr-3>
         {{ route.meta.frontmatter?.postInfoInNav || '' }}
       </n-tag>
@@ -15,11 +15,23 @@ const route = useRoute()
         {{ tag }}
       </n-tag>
     </div>
-    <n-h2 prefix="bar" strong ma>
-      {{ route.meta.frontmatter?.title || '' }}
-    </n-h2>
-    <div v-if="route.meta.frontmatter?.description">
-      {{ route.meta.frontmatter?.description || '' }}
+    <div flex items-center>
+      <n-h2 prefix="bar" strong ma>
+        {{ route.meta.frontmatter?.title || '' }}
+      </n-h2>
+      <div v-if="route.meta.frontmatter?.description" ml-2 lt-sm:hidden>
+        <n-ellipsis :class="route.meta.frontmatter?.tags?.length > 1 ? '!max-w-350px' : '!max-w-500px'" lt-lg="!max-w-240px">
+          {{ route.meta.frontmatter?.description || '' }}
+        </n-ellipsis>
+      </div>
+    </div>
+
+    <div flex items-center>
+      <n-button strong secondary round mr-2>
+        <div i-carbon-share mr-2 />
+        分享
+      </n-button>
+      <span font-bold text-16px op-30>Horbar</span>
     </div>
   </div>
 </template>
